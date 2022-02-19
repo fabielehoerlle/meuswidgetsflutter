@@ -1,0 +1,308 @@
+import 'dart:ui';
+
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
+import 'package:flutter/rendering.dart';
+import 'package:flutter/widgets.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        scaffoldBackgroundColor: const Color(0xffDFDFD9),
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.yellow,
+        ),
+      ),
+      home: const MyHomePage(title: "Fabiele Hoerlle"),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({Key? key, required this.title}) : super(key: key);
+
+  final String title;
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  int _counter = 0;
+
+  void _incrementCounter() {
+    setState(() {
+      _counter++;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.title),
+      ),
+      body: Container(
+        padding: const EdgeInsets.all(20),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    "Torta Trufada de\nLimão",
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: Color(0xff640E07),
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  Container(
+                    decoration: const BoxDecoration(
+                      color: Colors.yellow,
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(100),
+                      ),
+                    ),
+                    height: 30,
+                    width: 30,
+                    child: const Icon(
+                      Icons.favorite,
+                      color: Colors.white,
+                      size: 18,
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 10),
+              Row(
+                children: [
+                  Icon(
+                    Icons.share_outlined,
+                    size: 18,
+                  ),
+                  const SizedBox(width: 5),
+                  const Text(
+                    "Compartilhar",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 20),
+              ClipRRect(
+                borderRadius: BorderRadius.circular(25),
+                child: Container(
+                  color: Colors.black,
+                  child: Opacity(
+                    opacity: 0.8,
+                    child: Image.asset(
+                      "assets/tortadelimao.webp",
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              ListaDeIngredientes(),
+              const SizedBox(height: 30),
+              ModoDeFazer(),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class ListaDeIngredientes extends StatelessWidget {
+  const ListaDeIngredientes({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Image.asset(
+          "assets/comida.png",
+          height: 40,
+        ),
+        const SizedBox(
+          width: 15,
+        ),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text(
+              "Ingredientes",
+              style: TextStyle(
+                fontSize: 20,
+                color: Color(0xff640E07),
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Ingrediente(text: "2 Pacotinhos de Biscoito Maizena"),
+                Ingrediente(
+                    text: "5 Colheres (Sopa) de Manteiga (ou Margarina)"),
+                Ingrediente(text: "500g de Chocolate Branco Picado"),
+                Ingrediente(text: "2 Cremes de Leite"),
+                Ingrediente(text: "2 Limões"),
+                Ingrediente(text: "300ml de Chantilly"),
+                Ingrediente(text: "1 Colher (Sopa) de Açúcar"),
+                Ingrediente(text: "Raspas de 1 Limão"),
+              ],
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+}
+
+class ModoDeFazer extends StatelessWidget {
+  const ModoDeFazer({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Image.asset(
+          "assets/mododefazer.png",
+          height: 40,
+        ),
+        const SizedBox(
+          width: 15,
+        ),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text(
+              "Modo de Fazer",
+              style: TextStyle(
+                fontSize: 20,
+                color: Color(0xff640E07),
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+            Container(
+              width: 230,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text(
+                    "Triture os biscoitos de Maizena até virar " +
+                        "farelo e adicione a manteiga e misture " +
+                        "até virar uma massinha. Passe para " +
+                        "uma forma e modele a massa no fundo " +
+                        "e nas laterais da forma. Leve ao forno " +
+                        "pré-aquecido a 200°graus por 15 minutos.",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  const Text(
+                    "Pique o chocolate branco e leve ao " +
+                        "microondas de 30 em 30 segundos até " +
+                        "derreter, adicione 1 creme de leite e " +
+                        "misture até virar um creme. Adicione o " +
+                        "suco de limão e misture. Despeje tudo " +
+                        "na forma, espalhe e leve à geladeira por " +
+                        "3 a 4 horas.",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  const Text(
+                    "Coloque o chantilly na batedeira com o " +
+                        "açúcar e bata até ficar cremoso. " +
+                        "Adicione por cima da torta, espalhe, " +
+                        "finalize raspando a casca de um limão por cima",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+}
+
+class Ingrediente extends StatelessWidget {
+  const Ingrediente({
+    required this.text,
+    Key? key,
+  }) : super(key: key);
+  final String text;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Container(
+          margin: const EdgeInsets.only(
+            top: 5,
+          ),
+          decoration: const BoxDecoration(
+            borderRadius: BorderRadius.all(
+              Radius.circular(100),
+            ),
+            color: Colors.black,
+          ),
+          height: 6,
+          width: 6,
+        ),
+        const SizedBox(
+          width: 6,
+        ),
+        Container(
+          width: 215,
+          child: Text(
+            text,
+            style: const TextStyle(
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
