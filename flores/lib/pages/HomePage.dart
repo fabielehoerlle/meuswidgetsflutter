@@ -151,6 +151,7 @@ class FlowersList extends StatelessWidget {
     return Row(
       children: [
         FlowerItem(),
+        FlowerItem(),
       ],
     );
   }
