@@ -150,8 +150,24 @@ class FlowersList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        FlowerItem(),
-        FlowerItem(),
+        IconButton(
+          onPressed: () {},
+          icon: const Icon(Icons.arrow_back),
+        ),
+        SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Row(
+            children: const [
+              FlowerItem(),
+              SizedBox(width: 30),
+              FlowerItem(),
+              SizedBox(width: 30),
+              FlowerItem(),
+              SizedBox(width: 30),
+              FlowerItem(),
+            ],
+          ),
+        ),
       ],
     );
   }
