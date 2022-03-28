@@ -152,21 +152,50 @@ class FlowersList extends StatelessWidget {
       children: [
         IconButton(
           onPressed: () {},
-          icon: const Icon(Icons.arrow_back),
+          icon: const Icon(Icons.keyboard_arrow_left),
         ),
-        SingleChildScrollView(
-          scrollDirection: Axis.vertical,
-          child: Row(
-            children: const [
-              FlowerItem(),
-              SizedBox(width: 30),
-              FlowerItem(),
-              SizedBox(width: 30),
-              FlowerItem(),
-              SizedBox(width: 30),
-              FlowerItem(),
-            ],
+        Expanded(
+          child: SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: const [
+                FlowerItem(
+                  image: "assets/pink.png",
+                  name: "Buque Charme Love",
+                  value: "R\$ 305,00",
+                ),
+                FlowerItem(
+                  image: "assets/rosas.png",
+                  name: "Special Roses",
+                  value: "R\$ 494,00",
+                ),
+                FlowerItem(
+                  image: "assets/buque.png",
+                  name: "Amore Mio",
+                  value: "R\$ 171,00",
+                ),
+                FlowerItem(
+                  image: "assets/girassol.png",
+                  name: "Girassol",
+                  value: "R\$ 138,00",
+                ),
+                FlowerItem(
+                  image: "",
+                  name: "Garden Roses",
+                  value: "R\$ 438,00",
+                ),
+                FlowerItem(
+                  image: "",
+                  name: "Amor Perfeito",
+                  value: "R\$ 105,00",
+                ),
+              ],
+            ),
           ),
+        ),
+        IconButton(
+          onPressed: () {},
+          icon: const Icon(Icons.keyboard_arrow_right),
         ),
       ],
     );
@@ -176,21 +205,31 @@ class FlowersList extends StatelessWidget {
 class FlowerItem extends StatelessWidget {
   const FlowerItem({
     Key? key,
+    required this.image,
+    required this.name,
+    required this.value,
   }) : super(key: key);
+  final String image;
+  final String name;
+  final String value;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.only(top: 40, bottom: 40),
       //height: 250,
-      width: 200,
+      width: 220,
       child: Column(
         children: [
-          Image.asset("assets/pink.png"),
+          Image.asset(
+            image,
+            height: 200,
+          ),
           const SizedBox(height: 10),
-          const Text(
-            "Buque Charme Love",
-            style: TextStyle(
+          Text(
+            name,
+            //textAlign: TextAlign.center,
+            style: const TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,
             ),
@@ -202,9 +241,9 @@ class FlowerItem extends StatelessWidget {
             color: Colors.black,
           ),
           const SizedBox(height: 10),
-          const Text(
-            "R\$ 305,00",
-            style: TextStyle(
+          Text(
+            value,
+            style: const TextStyle(
               color: Color(0xff7B7877),
             ),
           ),

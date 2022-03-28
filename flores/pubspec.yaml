@@ -68,8 +68,10 @@ flutter:
   - assets/bebe.png
   - assets/aniversario.png
   - assets/flower.png
-  - assets/rosas.png
   - assets/pink.png
+  - assets/rosas.png
+  - assets/buque.png
+  - assets/girassol.png
   
 
   # An image asset can refer to one or more resolution-specific "variants", see
