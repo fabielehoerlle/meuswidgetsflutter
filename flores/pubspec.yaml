@@ -74,6 +74,7 @@ flutter:
   - assets/girassol.png
   - assets/cesta.png
   - assets/love.png
+  - assets/coracao.png
   
 
   # An image asset can refer to one or more resolution-specific "variants", see

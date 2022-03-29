@@ -31,8 +31,10 @@ class HomePageBody extends StatelessWidget {
           child: Column(
             children: const [
               Destaques(),
-              Separator(),
+              SeparatorItem(text: "We Like", image: "assets/flower.png"),
               FlowersList(),
+              SeparatorItem(text: "Avaliações", image: "assets/coracao.png"),
+              Evaluation(),
             ],
           ),
         ),
@@ -94,8 +96,14 @@ class Destaques extends StatelessWidget {
   }
 }
 
-class Separator extends StatelessWidget {
-  const Separator({Key? key}) : super(key: key);
+class SeparatorItem extends StatelessWidget {
+  const SeparatorItem({
+    Key? key,
+    required this.text,
+    required this.image,
+  }) : super(key: key);
+  final String text;
+  final String image;
 
   @override
   Widget build(BuildContext context) {
@@ -111,7 +119,7 @@ class Separator extends StatelessWidget {
           Center(
             child: Container(
               height: 40,
-              width: 150,
+              width: 200,
               decoration: BoxDecoration(
                 color: Colors.white,
                 border: Border.all(
@@ -121,17 +129,18 @@ class Separator extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text(
-                    "We Like",
-                    style: TextStyle(
+                  Text(
+                    text,
+                    style: const TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                   const SizedBox(width: 15),
                   Image.asset(
-                    "assets/flower.png",
-                    height: 35,
+                    image,
+                    color: Colors.red,
+                    height: 30,
                   ),
                 ],
               ),
@@ -249,6 +258,21 @@ class FlowerItem extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+}
+
+class Evaluation extends StatelessWidget {
+  const Evaluation({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.only(top: 40),
+      //padding: const EdgeInsets.only(top: 40),
+      height: 100,
+      width: 400,
+      color: Colors.pink,
     );
   }
 }
