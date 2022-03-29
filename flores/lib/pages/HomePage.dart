@@ -161,7 +161,7 @@ class FlowersList extends StatelessWidget {
               children: const [
                 FlowerItem(
                   image: "assets/pink.png",
-                  name: "Buque Charme Love",
+                  name: "Buque Charme",
                   value: "R\$ 305,00",
                 ),
                 FlowerItem(
@@ -180,12 +180,12 @@ class FlowersList extends StatelessWidget {
                   value: "R\$ 138,00",
                 ),
                 FlowerItem(
-                  image: "",
+                  image: "assets/cesta.png",
                   name: "Garden Roses",
                   value: "R\$ 438,00",
                 ),
                 FlowerItem(
-                  image: "",
+                  image: "assets/love.png",
                   name: "Amor Perfeito",
                   value: "R\$ 105,00",
                 ),
@@ -216,7 +216,7 @@ class FlowerItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.only(top: 40, bottom: 40),
+      padding: const EdgeInsets.only(top: 40),
       //height: 250,
       width: 220,
       child: Column(
