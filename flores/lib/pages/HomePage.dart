@@ -268,11 +268,27 @@ class Evaluation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(top: 40),
-      //padding: const EdgeInsets.only(top: 40),
-      height: 100,
-      width: 400,
-      color: Colors.pink,
+      padding: const EdgeInsets.only(top: 40),
+      //height: 200,
+      child: Column(
+        children: [
+          Row(
+            children: const [
+              Expanded(
+                child: Text("EXCELENTE: Muito obrigado a todos vocês. Começaram a semana " +
+                    "fazendo várias pessoas felizes: a Fernanda, a mim e a todos os " +
+                    "colegas e amigos que viram a alegria dela com as flores. MUITO OBRIGAD0!"),
+              ),
+              SizedBox(width: 100),
+              Expanded(
+                child: Text(
+                    "EXCELENTE: Tudo ótimo, obrigado! Mesmo estando longe pude me " +
+                        "fazer presente no dia das mães!"),
+              ),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }
