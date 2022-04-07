@@ -35,6 +35,9 @@ class HomePageBody extends StatelessWidget {
               FlowersList(),
               SeparatorItem(text: "Avaliações", image: "assets/coracao.png"),
               Evaluation(),
+              SeparatorItem(
+                  text: "Siga nossas Inspirações",
+                  image: "assets/instagram.png"),
             ],
           ),
         ),
@@ -51,7 +54,7 @@ class Destaques extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.only(top: 40),
+      padding: const EdgeInsets.only(top: 50),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -108,7 +111,7 @@ class SeparatorItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.only(top: 40),
+      padding: const EdgeInsets.only(top: 50),
       child: Stack(
         children: [
           Container(
@@ -119,7 +122,7 @@ class SeparatorItem extends StatelessWidget {
           Center(
             child: Container(
               height: 40,
-              width: 200,
+              width: 300,
               decoration: BoxDecoration(
                 color: Colors.white,
                 border: Border.all(
@@ -225,7 +228,7 @@ class FlowerItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.only(top: 40),
+      padding: const EdgeInsets.only(top: 50),
       //height: 250,
       width: 220,
       child: Column(
@@ -268,24 +271,69 @@ class Evaluation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.only(top: 40),
+      padding: const EdgeInsets.only(top: 50),
       //height: 200,
+      child: Row(
+        children: const [
+          Depoimento(
+            text: "EXCELENTE: Muito obrigado a todos vocês. Começaram a semana " +
+                "fazendo várias pessoas felizes: a Fernanda, a mim e a todos os " +
+                "colegas e amigos que viram a alegria dela com as flores. MUITO OBRIGAD0!",
+            sub1: "T.S.  ",
+            sub2: "21/05/2018",
+          ),
+          SizedBox(width: 100),
+          Depoimento(
+            text:
+                "EXCELENTE: Tudo ótimo, obrigado! Mesmo estando longe pude me " +
+                    "fazer presente no dia das mães!",
+            sub1: "D.O.  ",
+            sub2: "15/05/2018",
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class Depoimento extends StatelessWidget {
+  const Depoimento({
+    Key? key,
+    required this.text,
+    required this.sub1,
+    required this.sub2,
+  }) : super(key: key);
+  final String text;
+  final String sub1;
+  final String sub2;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
       child: Column(
         children: [
-          Row(
-            children: const [
-              Expanded(
-                child: Text("EXCELENTE: Muito obrigado a todos vocês. Começaram a semana " +
-                    "fazendo várias pessoas felizes: a Fernanda, a mim e a todos os " +
-                    "colegas e amigos que viram a alegria dela com as flores. MUITO OBRIGAD0!"),
+          Container(
+            width: 420,
+            child: Text(
+              text,
+              textAlign: TextAlign.center,
+            ),
+          ),
+          RichText(
+            text: TextSpan(
+              text: sub1,
+              style: const TextStyle(
+                color: Colors.black,
               ),
-              SizedBox(width: 100),
-              Expanded(
-                child: Text(
-                    "EXCELENTE: Tudo ótimo, obrigado! Mesmo estando longe pude me " +
-                        "fazer presente no dia das mães!"),
-              ),
-            ],
+              children: [
+                TextSpan(
+                  text: sub2,
+                  style: const TextStyle(
+                    color: Colors.grey,
+                  ),
+                ),
+              ],
+            ),
           ),
         ],
       ),
