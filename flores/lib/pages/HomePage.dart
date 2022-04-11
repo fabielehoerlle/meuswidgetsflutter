@@ -116,37 +116,41 @@ class SeparatorItem extends StatelessWidget {
       child: Stack(
         children: [
           Container(
-            margin: const EdgeInsets.only(top: 15),
+            margin: const EdgeInsets.only(top: 20),
             height: 1,
             color: Colors.grey,
           ),
           Center(
-            child: Container(
-              height: 30,
-              width: 300,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                border: Border.all(
-                  color: Colors.grey,
+            child: FittedBox(
+              fit: BoxFit.contain,
+              child: Container(
+                padding: const EdgeInsets.only(left: 10, right: 10),
+                height: 40,
+                //width: 300,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  border: Border.all(
+                    color: Colors.grey,
+                  ),
                 ),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    text,
-                    style: const TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      text,
+                      style: const TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                  ),
-                  const SizedBox(width: 15),
-                  Image.asset(
-                    image,
-                    color: Colors.red,
-                    height: 25,
-                  ),
-                ],
+                    const SizedBox(width: 15),
+                    Image.asset(
+                      image,
+                      color: Colors.red,
+                      height: 25,
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
@@ -163,9 +167,15 @@ class FlowersList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        IconButton(
-          onPressed: () {},
-          icon: const Icon(Icons.keyboard_arrow_left),
+        Container(
+          color: const Color(0xff4B4A4A),
+          child: IconButton(
+            onPressed: () {},
+            icon: const Icon(
+              Icons.keyboard_arrow_left,
+              color: Colors.white,
+            ),
+          ),
         ),
         Expanded(
           child: SingleChildScrollView(
@@ -206,9 +216,15 @@ class FlowersList extends StatelessWidget {
             ),
           ),
         ),
-        IconButton(
-          onPressed: () {},
-          icon: const Icon(Icons.keyboard_arrow_right),
+        Container(
+          color: const Color(0xff4B4A4A),
+          child: IconButton(
+            onPressed: () {},
+            icon: const Icon(
+              Icons.keyboard_arrow_right,
+              color: Colors.white,
+            ),
+          ),
         ),
       ],
     );
@@ -398,41 +414,17 @@ class Inspiracoes extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         child: Row(
           children: [
-            Container(
-              height: 230,
-              width: 230,
-              color: Colors.pink,
-            ),
+            Image.asset("assets/1.png"),
             const SizedBox(width: 10),
-            Container(
-              height: 230,
-              width: 230,
-              color: Colors.red,
-            ),
+            Image.asset("assets/2.png"),
             const SizedBox(width: 10),
-            Container(
-              height: 230,
-              width: 230,
-              color: Colors.blue,
-            ),
+            Image.asset("assets/3.png"),
             const SizedBox(width: 10),
-            Container(
-              height: 230,
-              width: 230,
-              color: Colors.yellow,
-            ),
+            Image.asset("assets/4.png"),
             const SizedBox(width: 10),
-            Container(
-              height: 230,
-              width: 230,
-              color: Colors.purple,
-            ),
+            Image.asset("assets/5.png"),
             const SizedBox(width: 10),
-            Container(
-              height: 230,
-              width: 230,
-              color: Colors.green,
-            ),
+            Image.asset("assets/6.png"),
           ],
         ),
       ),
