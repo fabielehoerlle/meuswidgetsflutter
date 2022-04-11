@@ -38,6 +38,7 @@ class HomePageBody extends StatelessWidget {
               SeparatorItem(
                   text: "Siga nossas Inspirações",
                   image: "assets/instagram.png"),
+              Instagram(),
             ],
           ),
         ),
@@ -115,13 +116,13 @@ class SeparatorItem extends StatelessWidget {
       child: Stack(
         children: [
           Container(
-            margin: const EdgeInsets.only(top: 20),
+            margin: const EdgeInsets.only(top: 15),
             height: 1,
             color: Colors.grey,
           ),
           Center(
             child: Container(
-              height: 40,
+              height: 30,
               width: 300,
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -143,7 +144,7 @@ class SeparatorItem extends StatelessWidget {
                   Image.asset(
                     image,
                     color: Colors.red,
-                    height: 30,
+                    height: 25,
                   ),
                 ],
               ),
@@ -282,7 +283,7 @@ class Evaluation extends StatelessWidget {
             sub1: "T.S.  ",
             sub2: "21/05/2018",
           ),
-          SizedBox(width: 100),
+          SizedBox(width: 110),
           Depoimento(
             text:
                 "EXCELENTE: Tudo ótimo, obrigado! Mesmo estando longe pude me " +
@@ -334,6 +335,68 @@ class Depoimento extends StatelessWidget {
                 ),
               ],
             ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class Instagram extends StatelessWidget {
+  const Instagram({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.only(top: 50),
+      child: Row(
+        children: [
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.keyboard_arrow_left),
+          ),
+          Expanded(
+            child: SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  Container(
+                    height: 250,
+                    width: 250,
+                    color: Colors.pink,
+                  ),
+                  Container(
+                    height: 250,
+                    width: 250,
+                    color: Colors.red,
+                  ),
+                  Container(
+                    height: 250,
+                    width: 250,
+                    color: Colors.blue,
+                  ),
+                  Container(
+                    height: 250,
+                    width: 250,
+                    color: Colors.yellow,
+                  ),
+                  Container(
+                    height: 250,
+                    width: 250,
+                    color: Colors.purple,
+                  ),
+                  Container(
+                    height: 250,
+                    width: 250,
+                    color: Colors.green,
+                  ),
+                ],
+              ),
+            ),
+          ),
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.keyboard_arrow_right),
           ),
         ],
       ),
