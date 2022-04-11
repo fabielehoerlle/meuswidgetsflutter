@@ -349,56 +349,92 @@ class Instagram extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.only(top: 50),
-      child: Row(
+      child: Stack(
         children: [
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.keyboard_arrow_left),
-          ),
-          Expanded(
-            child: SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                children: [
-                  Container(
-                    height: 250,
-                    width: 250,
-                    color: Colors.pink,
-                  ),
-                  Container(
-                    height: 250,
-                    width: 250,
-                    color: Colors.red,
-                  ),
-                  Container(
-                    height: 250,
-                    width: 250,
-                    color: Colors.blue,
-                  ),
-                  Container(
-                    height: 250,
-                    width: 250,
-                    color: Colors.yellow,
-                  ),
-                  Container(
-                    height: 250,
-                    width: 250,
-                    color: Colors.purple,
-                  ),
-                  Container(
-                    height: 250,
-                    width: 250,
-                    color: Colors.green,
-                  ),
-                ],
+          const Inspiracoes(),
+          Positioned(
+            left: 0,
+            top: 230 / 2,
+            child: Container(
+              color: const Color(0xff4B4A4A),
+              child: IconButton(
+                onPressed: () {},
+                icon: const Icon(
+                  Icons.keyboard_arrow_left,
+                  color: Colors.white,
+                ),
               ),
             ),
           ),
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.keyboard_arrow_right),
+          Positioned(
+            right: 0,
+            top: 230 / 2,
+            child: Container(
+              color: const Color(0xff4B4A4A),
+              child: IconButton(
+                onPressed: () {},
+                icon: const Icon(
+                  Icons.keyboard_arrow_right,
+                  color: Colors.white,
+                ),
+              ),
+            ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class Inspiracoes extends StatelessWidget {
+  const Inspiracoes({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: Row(
+          children: [
+            Container(
+              height: 230,
+              width: 230,
+              color: Colors.pink,
+            ),
+            const SizedBox(width: 10),
+            Container(
+              height: 230,
+              width: 230,
+              color: Colors.red,
+            ),
+            const SizedBox(width: 10),
+            Container(
+              height: 230,
+              width: 230,
+              color: Colors.blue,
+            ),
+            const SizedBox(width: 10),
+            Container(
+              height: 230,
+              width: 230,
+              color: Colors.yellow,
+            ),
+            const SizedBox(width: 10),
+            Container(
+              height: 230,
+              width: 230,
+              color: Colors.purple,
+            ),
+            const SizedBox(width: 10),
+            Container(
+              height: 230,
+              width: 230,
+              color: Colors.green,
+            ),
+          ],
+        ),
       ),
     );
   }
