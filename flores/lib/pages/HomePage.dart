@@ -440,15 +440,15 @@ class FooterMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(top: 100, bottom: 50),
-      padding: const EdgeInsets.only(top: 50),
+      padding: const EdgeInsets.only(top: 150),
       height: 400,
       width: 950,
-      color: Colors.pink,
       child: Row(
         children: const [
           Institucional(),
+          Spacer(),
           Atendimento(),
+          Spacer(),
           Noticia(),
         ],
       ),
@@ -466,11 +466,23 @@ class Institucional extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: const [
-        Text("Institucional"),
+        Text(
+          "Institucional",
+          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+        ),
         SizedBox(height: 10),
-        Text("Quem Somos"),
-        Text("Corporativo"),
-        Text("Eventos"),
+        Text(
+          "Quem Somos",
+          style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+        ),
+        Text(
+          "Corporativo",
+          style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+        ),
+        Text(
+          "Eventos",
+          style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+        ),
         SizedBox(height: 30),
         Text("Televendas: (51) 3564-1865"),
         Text("Whatsapp: (51) 99539-0290"),
@@ -508,16 +520,48 @@ class Noticia extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text("Assine nossa newsletter"),
+        const Text(
+          "Assine nossa newsletter",
+          style: TextStyle(
+            fontSize: 12,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        const SizedBox(height: 10),
         Container(
-          width: 100,
-          child: const TextField(
+          width: 230,
+          child: TextField(
+            cursorColor: Colors.grey,
             decoration: InputDecoration(
-              border: UnderlineInputBorder(),
+              focusedBorder: const UnderlineInputBorder(
+                borderSide: BorderSide(color: Colors.grey),
+              ),
+              suffixIcon: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.black,
+                  onPrimary: Colors.white,
+                ),
+                onPressed: () {},
+                child: const Text("Enviar"),
+              ),
               labelText: "Informe seu e-mail",
+              labelStyle: const TextStyle(color: Colors.grey),
             ),
           ),
+        ),
+        const SizedBox(height: 50),
+        Row(
+          children: [
+            Image.asset("assets/boleto.png"),
+            const SizedBox(width: 10),
+            Image.asset("assets/visa.png"),
+            const SizedBox(width: 10),
+            Image.asset("assets/master.png"),
+            const SizedBox(width: 10),
+            Image.asset("assets/dinners.png"),
+          ],
         ),
       ],
     );
