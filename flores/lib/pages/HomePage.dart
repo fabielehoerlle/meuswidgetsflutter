@@ -39,6 +39,7 @@ class HomePageBody extends StatelessWidget {
                   text: "Siga nossas Inspirações",
                   image: "assets/instagram.png"),
               Instagram(),
+              FooterMenu(),
             ],
           ),
         ),
@@ -297,7 +298,7 @@ class Evaluation extends StatelessWidget {
                 "fazendo várias pessoas felizes: a Fernanda, a mim e a todos os " +
                 "colegas e amigos que viram a alegria dela com as flores. MUITO OBRIGAD0!",
             sub1: "T.S.  ",
-            sub2: "21/05/2018",
+            sub2: "21/05/2021",
           ),
           SizedBox(width: 110),
           Depoimento(
@@ -305,7 +306,7 @@ class Evaluation extends StatelessWidget {
                 "EXCELENTE: Tudo ótimo, obrigado! Mesmo estando longe pude me " +
                     "fazer presente no dia das mães!",
             sub1: "D.O.  ",
-            sub2: "15/05/2018",
+            sub2: "15/05/2021",
           ),
         ],
       ),
@@ -336,6 +337,7 @@ class Depoimento extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
           ),
+          const SizedBox(height: 10),
           RichText(
             text: TextSpan(
               text: sub1,
@@ -428,6 +430,96 @@ class Inspiracoes extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+}
+
+class FooterMenu extends StatelessWidget {
+  const FooterMenu({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.only(top: 100, bottom: 50),
+      padding: const EdgeInsets.only(top: 50),
+      height: 400,
+      width: 950,
+      color: Colors.pink,
+      child: Row(
+        children: const [
+          Institucional(),
+          Atendimento(),
+          Noticia(),
+        ],
+      ),
+    );
+  }
+}
+
+class Institucional extends StatelessWidget {
+  const Institucional({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: const [
+        Text("Institucional"),
+        SizedBox(height: 10),
+        Text("Quem Somos"),
+        Text("Corporativo"),
+        Text("Eventos"),
+        SizedBox(height: 30),
+        Text("Televendas: (51) 3564-1865"),
+        Text("Whatsapp: (51) 99539-0290"),
+        Text("E-mail: atendimento@cantinhodasflores.com.br"),
+        Text("Seg à Sex das 8h às 18h. Sáb das 8h às 17h"),
+        Text("Av Pedro Adams Filho, 105, Industrial - Novo Hamburgo/RS"),
+      ],
+    );
+  }
+}
+
+class Atendimento extends StatelessWidget {
+  const Atendimento({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: const [
+        Text("Atendimento"),
+        SizedBox(height: 10),
+        Text("Atendimento ao Cliente"),
+        Text("Fale Conosco"),
+        Text("Cancelamento Pedido"),
+        Text("Formas de Pagamento"),
+        Text("Faturamento"),
+      ],
+    );
+  }
+}
+
+class Noticia extends StatelessWidget {
+  const Noticia({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        const Text("Assine nossa newsletter"),
+        Container(
+          width: 100,
+          child: const TextField(
+            decoration: InputDecoration(
+              border: UnderlineInputBorder(),
+              labelText: "Informe seu e-mail",
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
