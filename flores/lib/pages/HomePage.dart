@@ -170,12 +170,9 @@ class FlowersList extends StatelessWidget {
       children: [
         Container(
           color: const Color(0xff4B4A4A),
-          child: IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.keyboard_arrow_left,
-              color: Colors.white,
-            ),
+          child: const Icon(
+            Icons.keyboard_arrow_left,
+            color: Colors.white,
           ),
         ),
         Expanded(
@@ -219,12 +216,9 @@ class FlowersList extends StatelessWidget {
         ),
         Container(
           color: const Color(0xff4B4A4A),
-          child: IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.keyboard_arrow_right,
-              color: Colors.white,
-            ),
+          child: const Icon(
+            Icons.keyboard_arrow_right,
+            color: Colors.white,
           ),
         ),
       ],
@@ -248,7 +242,7 @@ class FlowerItem extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.only(top: 50),
       //height: 250,
-      width: 220,
+      width: 230,
       child: Column(
         children: [
           Image.asset(
@@ -375,12 +369,9 @@ class Instagram extends StatelessWidget {
             top: 230 / 2,
             child: Container(
               color: const Color(0xff4B4A4A),
-              child: IconButton(
-                onPressed: () {},
-                icon: const Icon(
-                  Icons.keyboard_arrow_left,
-                  color: Colors.white,
-                ),
+              child: const Icon(
+                Icons.keyboard_arrow_left,
+                color: Colors.white,
               ),
             ),
           ),
@@ -389,12 +380,9 @@ class Instagram extends StatelessWidget {
             top: 230 / 2,
             child: Container(
               color: const Color(0xff4B4A4A),
-              child: IconButton(
-                onPressed: () {},
-                icon: const Icon(
-                  Icons.keyboard_arrow_right,
-                  color: Colors.white,
-                ),
+              child: const Icon(
+                Icons.keyboard_arrow_right,
+                color: Colors.white,
               ),
             ),
           ),
@@ -440,7 +428,7 @@ class FooterMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.only(top: 150),
+      padding: const EdgeInsets.only(top: 50),
       height: 400,
       width: 950,
       child: Row(
@@ -465,30 +453,71 @@ class Institucional extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: const [
-        Text(
+      children: [
+        const Text(
           "Institucional",
           style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
         ),
-        SizedBox(height: 10),
-        Text(
+        const SizedBox(height: 10),
+        const Text(
           "Quem Somos",
           style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
         ),
-        Text(
+        const Text(
           "Corporativo",
           style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
         ),
-        Text(
+        const Text(
           "Eventos",
           style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
         ),
-        SizedBox(height: 30),
-        Text("Televendas: (51) 3564-1865"),
-        Text("Whatsapp: (51) 99539-0290"),
-        Text("E-mail: atendimento@cantinhodasflores.com.br"),
-        Text("Seg à Sex das 8h às 18h. Sáb das 8h às 17h"),
-        Text("Av Pedro Adams Filho, 105, Industrial - Novo Hamburgo/RS"),
+        const SizedBox(height: 30),
+        RichText(
+          text: const TextSpan(
+            text: "Televendas: ",
+            style: TextStyle(
+              fontSize: 12,
+              fontWeight: FontWeight.bold,
+            ),
+            children: [
+              TextSpan(
+                text: "(51) 3564-1865",
+                style: TextStyle(
+                  fontSize: 16,
+                ),
+              ),
+            ],
+          ),
+        ),
+        RichText(
+          text: const TextSpan(
+            text: "Whatsapp: ",
+            style: TextStyle(
+              fontSize: 12,
+              fontWeight: FontWeight.bold,
+            ),
+            children: [
+              TextSpan(
+                text: "(51) 99539-0290",
+                style: TextStyle(
+                  fontSize: 16,
+                ),
+              ),
+            ],
+          ),
+        ),
+        const Text(
+          "E-mail: atendimento@cantinhodasflores.com.br",
+          style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+        ),
+        const Text(
+          "Seg à Sex das 8h às 18h. Sáb das 8h às 17h",
+          style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+        ),
+        const Text(
+          "Av Pedro Adams Filho, 105, Industrial - Novo Hamburgo/RS",
+          style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+        ),
       ],
     );
   }
@@ -502,13 +531,31 @@ class Atendimento extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: const [
-        Text("Atendimento"),
+        Text(
+          "Atendimento",
+          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+        ),
         SizedBox(height: 10),
-        Text("Atendimento ao Cliente"),
-        Text("Fale Conosco"),
-        Text("Cancelamento Pedido"),
-        Text("Formas de Pagamento"),
-        Text("Faturamento"),
+        Text(
+          "Atendimento ao Cliente",
+          style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+        ),
+        Text(
+          "Fale Conosco",
+          style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+        ),
+        Text(
+          "Cancelamento Pedido",
+          style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+        ),
+        Text(
+          "Formas de Pagamento",
+          style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+        ),
+        Text(
+          "Faturamento",
+          style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+        ),
       ],
     );
   }
@@ -551,7 +598,7 @@ class Noticia extends StatelessWidget {
             ),
           ),
         ),
-        const SizedBox(height: 50),
+        const SizedBox(height: 80),
         Row(
           children: [
             Image.asset("assets/boleto.png"),
