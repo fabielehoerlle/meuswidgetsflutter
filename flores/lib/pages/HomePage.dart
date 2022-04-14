@@ -26,22 +26,36 @@ class HomePageBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: SingleChildScrollView(
-        child: Container(
-          constraints: const BoxConstraints(maxWidth: 950),
-          child: Column(
-            children: const [
-              Destaques(),
-              SeparatorItem(text: "We Like", image: "assets/flower.png"),
-              FlowersList(),
-              SeparatorItem(text: "Avaliações", image: "assets/coracao.png"),
-              Evaluation(),
-              SeparatorItem(
-                  text: "Siga nossas Inspirações",
-                  image: "assets/instagram.png"),
-              Instagram(),
-              FooterMenu(),
-            ],
-          ),
+        child: Column(
+          children: [
+            Container(
+              constraints: const BoxConstraints(maxWidth: 950),
+              child: Column(
+                children: const [
+                  Destaques(),
+                  SeparatorItem(text: "We Like", image: "assets/flower.png"),
+                  FlowersList(),
+                  SeparatorItem(
+                      text: "Avaliações", image: "assets/coracao.png"),
+                  Evaluation(),
+                  SeparatorItem(
+                      text: "Siga nossas Inspirações",
+                      image: "assets/instagram.png"),
+                  Instagram(),
+                ],
+              ),
+            ),
+            const Separator(),
+            Container(
+              constraints: const BoxConstraints(maxWidth: 950),
+              child: Column(
+                children: const [
+                  FooterMenu(),
+                  Footer(),
+                ],
+              ),
+            ),
+          ],
         ),
       ),
     );
@@ -422,16 +436,29 @@ class Inspiracoes extends StatelessWidget {
   }
 }
 
+class Separator extends StatelessWidget {
+  const Separator({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.only(top: 150),
+      height: 1,
+      color: Colors.grey,
+    );
+  }
+}
+
 class FooterMenu extends StatelessWidget {
   const FooterMenu({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.only(top: 50),
-      height: 400,
-      width: 950,
+      padding: const EdgeInsets.only(top: 40),
+      //height: 300,
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: const [
           Institucional(),
           Spacer(),
@@ -456,26 +483,31 @@ class Institucional extends StatelessWidget {
       children: [
         const Text(
           "Institucional",
-          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+          style: TextStyle(
+              color: Colors.black, fontSize: 16, fontWeight: FontWeight.bold),
         ),
         const SizedBox(height: 10),
         const Text(
           "Quem Somos",
-          style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+          style: TextStyle(
+              color: Colors.black, fontSize: 12, fontWeight: FontWeight.bold),
         ),
         const Text(
           "Corporativo",
-          style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+          style: TextStyle(
+              color: Colors.black, fontSize: 12, fontWeight: FontWeight.bold),
         ),
         const Text(
           "Eventos",
-          style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+          style: TextStyle(
+              color: Colors.black, fontSize: 12, fontWeight: FontWeight.bold),
         ),
         const SizedBox(height: 30),
         RichText(
           text: const TextSpan(
             text: "Televendas: ",
             style: TextStyle(
+              color: Colors.black,
               fontSize: 12,
               fontWeight: FontWeight.bold,
             ),
@@ -483,7 +515,7 @@ class Institucional extends StatelessWidget {
               TextSpan(
                 text: "(51) 3564-1865",
                 style: TextStyle(
-                  fontSize: 16,
+                  fontSize: 14,
                 ),
               ),
             ],
@@ -493,6 +525,7 @@ class Institucional extends StatelessWidget {
           text: const TextSpan(
             text: "Whatsapp: ",
             style: TextStyle(
+              color: Colors.black,
               fontSize: 12,
               fontWeight: FontWeight.bold,
             ),
@@ -500,7 +533,7 @@ class Institucional extends StatelessWidget {
               TextSpan(
                 text: "(51) 99539-0290",
                 style: TextStyle(
-                  fontSize: 16,
+                  fontSize: 14,
                 ),
               ),
             ],
@@ -508,15 +541,18 @@ class Institucional extends StatelessWidget {
         ),
         const Text(
           "E-mail: atendimento@cantinhodasflores.com.br",
-          style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+          style: TextStyle(
+              color: Colors.black, fontSize: 12, fontWeight: FontWeight.bold),
         ),
         const Text(
           "Seg à Sex das 8h às 18h. Sáb das 8h às 17h",
-          style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+          style: TextStyle(
+              color: Colors.black, fontSize: 12, fontWeight: FontWeight.bold),
         ),
         const Text(
           "Av Pedro Adams Filho, 105, Industrial - Novo Hamburgo/RS",
-          style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+          style: TextStyle(
+              color: Colors.black, fontSize: 12, fontWeight: FontWeight.bold),
         ),
       ],
     );
@@ -533,28 +569,34 @@ class Atendimento extends StatelessWidget {
       children: const [
         Text(
           "Atendimento",
-          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+          style: TextStyle(
+              color: Colors.black, fontSize: 16, fontWeight: FontWeight.bold),
         ),
         SizedBox(height: 10),
         Text(
           "Atendimento ao Cliente",
-          style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+          style: TextStyle(
+              color: Colors.black, fontSize: 12, fontWeight: FontWeight.bold),
         ),
         Text(
           "Fale Conosco",
-          style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+          style: TextStyle(
+              color: Colors.black, fontSize: 12, fontWeight: FontWeight.bold),
         ),
         Text(
           "Cancelamento Pedido",
-          style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+          style: TextStyle(
+              color: Colors.black, fontSize: 12, fontWeight: FontWeight.bold),
         ),
         Text(
           "Formas de Pagamento",
-          style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+          style: TextStyle(
+              color: Colors.black, fontSize: 12, fontWeight: FontWeight.bold),
         ),
         Text(
           "Faturamento",
-          style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+          style: TextStyle(
+              color: Colors.black, fontSize: 12, fontWeight: FontWeight.bold),
         ),
       ],
     );
@@ -572,11 +614,11 @@ class Noticia extends StatelessWidget {
         const Text(
           "Assine nossa newsletter",
           style: TextStyle(
+            color: Colors.black,
             fontSize: 12,
             fontWeight: FontWeight.bold,
           ),
         ),
-        const SizedBox(height: 10),
         Container(
           width: 230,
           child: TextField(
@@ -598,7 +640,7 @@ class Noticia extends StatelessWidget {
             ),
           ),
         ),
-        const SizedBox(height: 80),
+        const SizedBox(height: 60),
         Row(
           children: [
             Image.asset("assets/boleto.png"),
@@ -611,6 +653,45 @@ class Noticia extends StatelessWidget {
           ],
         ),
       ],
+    );
+  }
+}
+
+class Footer extends StatelessWidget {
+  const Footer({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.only(top: 40, bottom: 10),
+      child: Column(
+        children: [
+          Container(
+            height: 1,
+            color: Colors.grey,
+          ),
+          const SizedBox(height: 5),
+          RichText(
+            textAlign: TextAlign.center,
+            text: const TextSpan(
+              text: "Todos os direitos reservados - \n ",
+              style: TextStyle(
+                color: Colors.grey,
+                fontSize: 12,
+                fontWeight: FontWeight.bold,
+              ),
+              children: [
+                TextSpan(
+                  text: "Vnda - Tecnologia para Ecommerce",
+                  style: TextStyle(
+                    color: Colors.black,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
