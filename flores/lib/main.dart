@@ -1,4 +1,5 @@
 import 'package:flores/pages/HomePage.dart';
+import 'package:flores/pages/RomanticoPage.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.white,
       ),
-      home: const HomePage(),
+      home: const RomanticoPage(),
     );
   }
 }
