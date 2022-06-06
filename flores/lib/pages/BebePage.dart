@@ -3,8 +3,8 @@ import 'package:flores/widgets/Header.dart';
 import 'package:flores/widgets/SeparatorDestaque.dart';
 import 'package:flutter/material.dart';
 
-class RomanticoPage extends StatelessWidget {
-  const RomanticoPage({Key? key}) : super(key: key);
+class BebePage extends StatelessWidget {
+  const BebePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class RomanticoPage extends StatelessWidget {
             child: SingleChildScrollView(
               child: Column(
                 children: const [
-                  RomanticoBody(),
+                  BebeBody(),
                   Footer(),
                 ],
               ),
@@ -28,21 +28,18 @@ class RomanticoPage extends StatelessWidget {
   }
 }
 
-class RomanticoBody extends StatelessWidget {
-  const RomanticoBody({Key? key}) : super(key: key);
+class BebeBody extends StatelessWidget {
+  const BebeBody({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Image.asset("assets/amor.png"),
+        Image.asset("assets/maternidade.png"),
         Column(
           children: const [
-            SeparatorDestaque(
-                text: "Presentes Românticos", image: "assets/coracao.png"),
+            SeparatorDestaque(text: "Maternidade", image: "assets/coracao.png"),
             SearchBody(),
-            SizedBox(height: 100),
-            Paginacao(),
           ],
         ),
       ],
@@ -86,17 +83,17 @@ class FlowersList extends StatelessWidget {
           Row(
             children: const [
               FlowerItem(
-                  image: "assets/flor.png",
-                  name: "Cesto de Rosas",
-                  value: "R\$ 362,00"),
+                  image: "assets/20.png",
+                  name: "Welcome Baby",
+                  value: "R\$ 220,00"),
               FlowerItem(
                   image: "assets/love.png",
                   name: "Amor Perfeito",
-                  value: "R\$ 105,00"),
+                  value: "R\$ 199,00"),
               FlowerItem(
                   image: "assets/cesta.png",
                   name: "Garden Roses",
-                  value: "R\$ 438,00"),
+                  value: "R\$ 199,00"),
             ],
           ),
           Row(
@@ -104,15 +101,15 @@ class FlowersList extends StatelessWidget {
               FlowerItem(
                   image: "assets/pink.png",
                   name: "Buque Charme",
-                  value: "R\$ 305,00"),
+                  value: "R\$ 345,00"),
               FlowerItem(
                   image: "assets/buque.png",
                   name: "Amore Mio",
-                  value: "R\$ 171,00"),
+                  value: "R\$ 345,00"),
               FlowerItem(
                   image: "assets/rosas.png",
                   name: "Special Roses",
-                  value: "R\$ 494,00"),
+                  value: "R\$ 119,00"),
             ],
           ),
           Row(
@@ -120,15 +117,15 @@ class FlowersList extends StatelessWidget {
               FlowerItem(
                   image: "assets/caixa.png",
                   name: "Cesto Especial",
-                  value: "R\$ 355,00"),
+                  value: "R\$ 119,00"),
               FlowerItem(
                   image: "assets/8.png",
                   name: "Buque Maya",
-                  value: "R\$ 180,00,"),
+                  value: "R\$ 175,00,"),
               FlowerItem(
                   image: "assets/17.png",
                   name: "Box Flower",
-                  value: "R\$ 260,00"),
+                  value: "R\$ 189,00"),
             ],
           ),
           Row(
@@ -136,65 +133,11 @@ class FlowersList extends StatelessWidget {
               FlowerItem(
                   image: "assets/11.png",
                   name: "Amor em Rosas",
-                  value: "R\$ 260,00"),
+                  value: "R\$ 175,00"),
               FlowerItem(
                   image: "assets/9.png",
                   name: "Buque My Love",
-                  value: "R\$ 166,00"),
-              FlowerItem(
-                  image: "assets/13.png",
-                  name: "Urso Amoroso",
-                  value: "R\$ 151,00"),
-            ],
-          ),
-          Row(
-            children: const [
-              FlowerItem(
-                  image: "assets/12.png",
-                  name: "Eterno Amor",
-                  value: "R\$ 372,00"),
-              FlowerItem(
-                image: "assets/7.png",
-                name: "Red Love",
-                value: "R\$ 98,00",
-              ),
-              FlowerItem(
-                image: "assets/19.png",
-                name: "Amor",
-                value: "R\$ 250,00",
-              ),
-            ],
-          ),
-          Row(
-            children: const [
-              FlowerItem(
-                  image: "assets/15.png",
-                  name: "Amor Encanto",
-                  value: "R\$ 139,00"),
-              FlowerItem(
-                image: "assets/16.png",
-                name: "Duetto",
-                value: "R\$ 150,00",
-              ),
-              FlowerItem(
-                  image: "assets/14.png",
-                  name: "Singelo Amor",
-                  value: "R\$ 111,00"),
-            ],
-          ),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
-              FlowerItem(
-                image: "assets/18.png",
-                name: "Amo Você",
-                value: "R\$ 233,00",
-              ),
-              FlowerItem(
-                image: "assets/10.png",
-                name: "Rustic Chic",
-                value: "R\$ 220,00",
-              ),
+                  value: "Produto esgotado"),
             ],
           ),
         ],
@@ -250,32 +193,6 @@ class FlowerItem extends StatelessWidget {
           ),
         ],
       ),
-    );
-  }
-}
-
-class Paginacao extends StatelessWidget {
-  const Paginacao({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: const [
-        Icon(
-          Icons.keyboard_arrow_left,
-          size: 15,
-        ),
-        SizedBox(width: 15),
-        Text("1"),
-        SizedBox(width: 20),
-        Text("2"),
-        SizedBox(width: 15),
-        Icon(
-          Icons.keyboard_arrow_right,
-          size: 15,
-        ),
-      ],
     );
   }
 }

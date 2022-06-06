@@ -1,3 +1,4 @@
+import 'package:flores/pages/BebePage.dart';
 import 'package:flores/pages/HomePage.dart';
 import 'package:flores/pages/RomanticoPage.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.white,
       ),
-      home: const RomanticoPage(),
+      home: const BebePage(),
     );
   }
 }
