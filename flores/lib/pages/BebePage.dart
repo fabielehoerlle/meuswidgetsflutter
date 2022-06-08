@@ -87,52 +87,50 @@ class FlowersList extends StatelessWidget {
                   name: "Welcome Baby",
                   value: "R\$ 220,00"),
               FlowerItem(
-                  image: "assets/love.png",
-                  name: "Amor Perfeito",
-                  value: "R\$ 199,00"),
+                  image: "assets/20.png", name: "-----", value: "R\$ 199,00"),
               FlowerItem(
-                  image: "assets/cesta.png",
-                  name: "Garden Roses",
-                  value: "R\$ 199,00"),
+                  image: "assets/27.png",
+                  name: "Nana Menino",
+                  value: "R\$ 345,00"),
             ],
           ),
           Row(
             children: const [
               FlowerItem(
-                  image: "assets/pink.png",
-                  name: "Buque Charme",
+                  image: "assets/22.png",
+                  name: "Nana Menina",
                   value: "R\$ 345,00"),
               FlowerItem(
-                  image: "assets/buque.png",
-                  name: "Amore Mio",
-                  value: "R\$ 345,00"),
+                  image: "assets/27.png",
+                  name: "Baby Boy",
+                  value: "R\$ 199,00"),
               FlowerItem(
-                  image: "assets/rosas.png",
-                  name: "Special Roses",
+                  image: "assets/23.png",
+                  name: "É uma menina",
                   value: "R\$ 119,00"),
             ],
           ),
           Row(
             children: const [
               FlowerItem(
-                  image: "assets/caixa.png",
-                  name: "Cesto Especial",
+                  image: "assets/26.png",
+                  name: "É um menino",
                   value: "R\$ 119,00"),
               FlowerItem(
-                  image: "assets/8.png",
-                  name: "Buque Maya",
-                  value: "R\$ 175,00,"),
+                  image: "assets/25.png",
+                  name: "Pequena Fofura",
+                  value: "R\$ 175,00"),
               FlowerItem(
-                  image: "assets/17.png",
-                  name: "Box Flower",
+                  image: "assets/21.png",
+                  name: "Baby Urso",
                   value: "R\$ 189,00"),
             ],
           ),
           Row(
             children: const [
               FlowerItem(
-                  image: "assets/11.png",
-                  name: "Amor em Rosas",
+                  image: "assets/24.png",
+                  name: "Girl Fofura",
                   value: "R\$ 175,00"),
               FlowerItem(
                   image: "assets/9.png",
