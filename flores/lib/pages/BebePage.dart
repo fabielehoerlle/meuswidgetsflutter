@@ -87,7 +87,9 @@ class FlowersList extends StatelessWidget {
                   name: "Welcome Baby",
                   value: "R\$ 220,00"),
               FlowerItem(
-                  image: "assets/20.png", name: "-----", value: "R\$ 199,00"),
+                  image: "assets/29.png",
+                  name: "Baby Girl",
+                  value: "R\$ 199,00"),
               FlowerItem(
                   image: "assets/27.png",
                   name: "Nana Menino",
@@ -101,8 +103,8 @@ class FlowersList extends StatelessWidget {
                   name: "Nana Menina",
                   value: "R\$ 345,00"),
               FlowerItem(
-                  image: "assets/27.png",
-                  name: "Baby Boy",
+                  image: "assets/28.png",
+                  name: "Box Baby",
                   value: "R\$ 199,00"),
               FlowerItem(
                   image: "assets/23.png",
@@ -129,13 +131,14 @@ class FlowersList extends StatelessWidget {
           Row(
             children: const [
               FlowerItem(
-                  image: "assets/24.png",
+                  image: "assets/30.png",
                   name: "Girl Fofura",
                   value: "R\$ 175,00"),
               FlowerItem(
-                  image: "assets/9.png",
-                  name: "Buque My Love",
-                  value: "Produto esgotado"),
+                image: "assets/24.png",
+                name: "Bem Vinda Menina",
+                value: "Produto esgotado",
+              )
             ],
           ),
         ],

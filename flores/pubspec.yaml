@@ -111,6 +111,9 @@ flutter:
   - assets/25.png
   - assets/26.png
   - assets/27.png
+  - assets/28.png
+  - assets/29.png
+  - assets/30.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
