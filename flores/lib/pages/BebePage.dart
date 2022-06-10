@@ -63,7 +63,7 @@ class SearchBody extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.only(top: 40, right: 40),
                   //height: 250,
-                  width: 180,
+                  width: 200,
                   //color: Colors.red,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -76,29 +76,45 @@ class SearchBody extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(height: 10),
-                      Container(
-                        width: 120,
-                        child: const TextField(
-                          cursorColor: Colors.grey,
-                          decoration: InputDecoration(
-                            suffixIcon: Icon(
-                              Icons.arrow_drop_down_outlined,
-                              size: 30,
-                              color: Colors.grey,
-                            ),
-                            isDense: true,
-                            contentPadding: EdgeInsets.all(12),
-                            enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Colors.black),
-                            ),
-                            focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Colors.black),
-                            ),
-                            labelText: "Padrão",
-                            labelStyle:
-                                TextStyle(fontSize: 12, color: Colors.black),
+                      DropdownButtonFormField(
+                        decoration: InputDecoration(
+                          isDense: true,
+                          contentPadding: const EdgeInsets.all(8),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          enabledBorder: const OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.black),
+                          ),
+                          focusedBorder: const OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.black),
                           ),
                         ),
+                        isExpanded: true,
+                        value: 2,
+                        onChanged: (value) {},
+                        items: const [
+                          DropdownMenuItem(
+                            child: Text(
+                              "Ordenar produtos por:",
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            value: 0,
+                            enabled: false,
+                          ),
+                          DropdownMenuItem(child: Text("Padrão"), value: 1),
+                          DropdownMenuItem(
+                              child: Text("Mais recentes"), value: 2),
+                          DropdownMenuItem(
+                              child: Text("Mais antigos"), value: 3),
+                          DropdownMenuItem(
+                              child: Text("Menor preço"), value: 4),
+                          DropdownMenuItem(
+                              child: Text("Maior preço"), value: 5),
+                        ],
                       ),
                       const SizedBox(height: 25),
                       const Text(
@@ -109,26 +125,48 @@ class SearchBody extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(height: 10),
-                      const TextField(
-                        cursorColor: Colors.grey,
+                      DropdownButtonFormField(
                         decoration: InputDecoration(
-                          suffixIcon: Icon(
-                            Icons.arrow_drop_down_outlined,
-                            size: 30,
-                            color: Colors.grey,
-                          ),
                           isDense: true,
-                          contentPadding: EdgeInsets.all(12),
-                          enabledBorder: OutlineInputBorder(
+                          contentPadding: const EdgeInsets.all(8),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          enabledBorder: const OutlineInputBorder(
                             borderSide: BorderSide(color: Colors.black),
                           ),
-                          focusedBorder: OutlineInputBorder(
+                          focusedBorder: const OutlineInputBorder(
                             borderSide: BorderSide(color: Colors.black),
                           ),
-                          labelText: "Valentines",
-                          labelStyle:
-                              TextStyle(fontSize: 12, color: Colors.black),
                         ),
+                        isExpanded: true,
+                        value: 2,
+                        onChanged: (value) {},
+                        items: const [
+                          DropdownMenuItem(
+                            child: Text(
+                              "Produtos:",
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            value: 0,
+                            enabled: false,
+                          ),
+                          DropdownMenuItem(
+                              child: Text("Arranjos-florais"), value: 1),
+                          DropdownMenuItem(child: Text("Bonsai"), value: 2),
+                          DropdownMenuItem(
+                              child: Text("Box-collection"), value: 3),
+                          DropdownMenuItem(child: Text("Buquês"), value: 4),
+                          DropdownMenuItem(child: Text("Cervejas"), value: 5),
+                          DropdownMenuItem(child: Text("Cestas"), value: 6),
+                          DropdownMenuItem(
+                              child: Text("Cestas-aniversário"), value: 7),
+                          DropdownMenuItem(
+                              child: Text("Cestas-românticas"), value: 8),
+                        ],
                       ),
                     ],
                   ),
