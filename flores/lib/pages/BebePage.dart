@@ -58,10 +58,82 @@ class SearchBody extends StatelessWidget {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
-              height: 250,
-              width: 200,
-              color: Colors.red,
+            Column(
+              children: [
+                Container(
+                  padding: const EdgeInsets.only(top: 40, right: 40),
+                  //height: 250,
+                  width: 180,
+                  //color: Colors.red,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        "Ordenar por:",
+                        style: TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const SizedBox(height: 10),
+                      Container(
+                        width: 120,
+                        child: const TextField(
+                          cursorColor: Colors.grey,
+                          decoration: InputDecoration(
+                            suffixIcon: Icon(
+                              Icons.arrow_drop_down_outlined,
+                              size: 30,
+                              color: Colors.grey,
+                            ),
+                            isDense: true,
+                            contentPadding: EdgeInsets.all(12),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.black),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.black),
+                            ),
+                            labelText: "Padrão",
+                            labelStyle:
+                                TextStyle(fontSize: 12, color: Colors.black),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 25),
+                      const Text(
+                        "Produtos:",
+                        style: TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const SizedBox(height: 10),
+                      const TextField(
+                        cursorColor: Colors.grey,
+                        decoration: InputDecoration(
+                          suffixIcon: Icon(
+                            Icons.arrow_drop_down_outlined,
+                            size: 30,
+                            color: Colors.grey,
+                          ),
+                          isDense: true,
+                          contentPadding: EdgeInsets.all(12),
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.black),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.black),
+                          ),
+                          labelText: "Valentines",
+                          labelStyle:
+                              TextStyle(fontSize: 12, color: Colors.black),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
             ),
             const FlowersList(),
           ],
