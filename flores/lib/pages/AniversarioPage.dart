@@ -4,8 +4,8 @@ import 'package:flores/widgets/SearchSidebar.dart';
 import 'package:flores/widgets/SeparatorDestaque.dart';
 import 'package:flutter/material.dart';
 
-class BebePage extends StatelessWidget {
-  const BebePage({Key? key}) : super(key: key);
+class AniversarioPage extends StatelessWidget {
+  const AniversarioPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class BebePage extends StatelessWidget {
             child: SingleChildScrollView(
               child: Column(
                 children: const [
-                  BebeBody(),
+                  AniversarioBody(),
                   Footer(),
                 ],
               ),
@@ -29,17 +29,19 @@ class BebePage extends StatelessWidget {
   }
 }
 
-class BebeBody extends StatelessWidget {
-  const BebeBody({Key? key}) : super(key: key);
+class AniversarioBody extends StatelessWidget {
+  const AniversarioBody({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Image.asset("assets/maternidade.png"),
+        Image.asset("assets/aniversario1.png"),
         Column(
           children: const [
-            SeparatorDestaque(text: "Maternidade", image: "assets/coracao.png"),
+            SeparatorDestaque(
+                text: "Presentes para Aniversário",
+                image: "assets/coracao.png"),
             SearchBody(),
           ],
         ),
@@ -60,7 +62,7 @@ class SearchBody extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: const [
             SearchSidebar(),
-            BebesList(),
+            AniversariosList(),
           ],
         ),
       ),
@@ -68,8 +70,8 @@ class SearchBody extends StatelessWidget {
   }
 }
 
-class BebesList extends StatelessWidget {
-  const BebesList({Key? key}) : super(key: key);
+class AniversariosList extends StatelessWidget {
+  const AniversariosList({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -79,47 +81,45 @@ class BebesList extends StatelessWidget {
         children: [
           Row(
             children: const [
-              BebeItem(
-                  image: "assets/20.png",
-                  name: "Welcome Baby",
-                  value: "R\$ 220,00"),
-              BebeItem(
-                  image: "assets/29.png",
-                  name: "Baby Girl",
-                  value: "R\$ 199,00"),
-              BebeItem(
-                  image: "assets/27.png",
+              AniversarioItem(
+                  image: "assets/31.png",
+                  name: "Mimo Colorido",
+                  value: "R\$ 79,00"),
+              AniversarioItem(
+                  image: "assets/29.png", name: "Parabéns", value: "R\$ 89,00"),
+              AniversarioItem(
+                  image: "assets/21.png",
                   name: "Nana Menino",
                   value: "R\$ 345,00"),
             ],
           ),
           Row(
             children: const [
-              BebeItem(
-                  image: "assets/22.png",
+              AniversarioItem(
+                  image: "assets/25.png",
                   name: "Nana Menina",
                   value: "R\$ 345,00"),
-              BebeItem(
-                  image: "assets/28.png",
+              AniversarioItem(
+                  image: "assets/35.png",
                   name: "Box Baby",
                   value: "R\$ 199,00"),
-              BebeItem(
-                  image: "assets/23.png",
-                  name: "É uma menina",
-                  value: "R\$ 119,00"),
+              AniversarioItem(
+                  image: "assets/36.png",
+                  name: "La Belle",
+                  value: "R\$ 340,00"),
             ],
           ),
           Row(
             children: const [
-              BebeItem(
-                  image: "assets/26.png",
-                  name: "É um menino",
-                  value: "R\$ 119,00"),
-              BebeItem(
+              AniversarioItem(
+                  image: "assets/37.png",
+                  name: "Mix Colors",
+                  value: "R\$ 190,00"),
+              AniversarioItem(
                   image: "assets/25.png",
                   name: "Pequena Fofura",
                   value: "R\$ 175,00"),
-              BebeItem(
+              AniversarioItem(
                   image: "assets/21.png",
                   name: "Baby Urso",
                   value: "R\$ 189,00"),
@@ -127,11 +127,11 @@ class BebesList extends StatelessWidget {
           ),
           Row(
             children: const [
-              BebeItem(
+              AniversarioItem(
                   image: "assets/30.png",
                   name: "Girl Fofura",
                   value: "R\$ 175,00"),
-              BebeItem(
+              AniversarioItem(
                 image: "assets/24.png",
                 name: "Bem Vinda Menina",
                 value: "Produto esgotado",
@@ -145,8 +145,8 @@ class BebesList extends StatelessWidget {
   }
 }
 
-class BebeItem extends StatelessWidget {
-  const BebeItem({
+class AniversarioItem extends StatelessWidget {
+  const AniversarioItem({
     Key? key,
     required this.image,
     required this.name,

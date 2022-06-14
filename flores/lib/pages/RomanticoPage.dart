@@ -1,5 +1,6 @@
 import 'package:flores/widgets/Footer.dart';
 import 'package:flores/widgets/Header.dart';
+import 'package:flores/widgets/SearchSidebar.dart';
 import 'package:flores/widgets/SeparatorDestaque.dart';
 import 'package:flutter/material.dart';
 
@@ -57,16 +58,12 @@ class SearchBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-        width: 800,
+        width: 900,
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              height: 250,
-              width: 200,
-              color: Colors.red,
-            ),
-            const FlowersList(),
+          children: const [
+            SearchSidebar(),
+            RomanticosList(),
           ],
         ),
       ),
@@ -74,8 +71,8 @@ class SearchBody extends StatelessWidget {
   }
 }
 
-class FlowersList extends StatelessWidget {
-  const FlowersList({Key? key}) : super(key: key);
+class RomanticosList extends StatelessWidget {
+  const RomanticosList({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -85,15 +82,15 @@ class FlowersList extends StatelessWidget {
         children: [
           Row(
             children: const [
-              FlowerItem(
+              RomanticoItem(
                   image: "assets/flor.png",
                   name: "Cesto de Rosas",
                   value: "R\$ 362,00"),
-              FlowerItem(
+              RomanticoItem(
                   image: "assets/love.png",
                   name: "Amor Perfeito",
                   value: "R\$ 105,00"),
-              FlowerItem(
+              RomanticoItem(
                   image: "assets/cesta.png",
                   name: "Garden Roses",
                   value: "R\$ 438,00"),
@@ -101,15 +98,15 @@ class FlowersList extends StatelessWidget {
           ),
           Row(
             children: const [
-              FlowerItem(
+              RomanticoItem(
                   image: "assets/pink.png",
                   name: "Buque Charme",
                   value: "R\$ 305,00"),
-              FlowerItem(
+              RomanticoItem(
                   image: "assets/buque.png",
                   name: "Amore Mio",
                   value: "R\$ 171,00"),
-              FlowerItem(
+              RomanticoItem(
                   image: "assets/rosas.png",
                   name: "Special Roses",
                   value: "R\$ 494,00"),
@@ -117,15 +114,15 @@ class FlowersList extends StatelessWidget {
           ),
           Row(
             children: const [
-              FlowerItem(
+              RomanticoItem(
                   image: "assets/caixa.png",
                   name: "Cesto Especial",
                   value: "R\$ 355,00"),
-              FlowerItem(
+              RomanticoItem(
                   image: "assets/8.png",
                   name: "Buque Maya",
                   value: "R\$ 180,00,"),
-              FlowerItem(
+              RomanticoItem(
                   image: "assets/17.png",
                   name: "Box Flower",
                   value: "R\$ 260,00"),
@@ -133,15 +130,15 @@ class FlowersList extends StatelessWidget {
           ),
           Row(
             children: const [
-              FlowerItem(
+              RomanticoItem(
                   image: "assets/11.png",
                   name: "Amor em Rosas",
                   value: "R\$ 260,00"),
-              FlowerItem(
+              RomanticoItem(
                   image: "assets/9.png",
                   name: "Buque My Love",
                   value: "R\$ 166,00"),
-              FlowerItem(
+              RomanticoItem(
                   image: "assets/13.png",
                   name: "Urso Amoroso",
                   value: "R\$ 151,00"),
@@ -149,16 +146,16 @@ class FlowersList extends StatelessWidget {
           ),
           Row(
             children: const [
-              FlowerItem(
+              RomanticoItem(
                   image: "assets/12.png",
                   name: "Eterno Amor",
                   value: "R\$ 372,00"),
-              FlowerItem(
+              RomanticoItem(
                 image: "assets/7.png",
                 name: "Red Love",
                 value: "R\$ 98,00",
               ),
-              FlowerItem(
+              RomanticoItem(
                 image: "assets/19.png",
                 name: "Amor",
                 value: "R\$ 250,00",
@@ -167,16 +164,16 @@ class FlowersList extends StatelessWidget {
           ),
           Row(
             children: const [
-              FlowerItem(
+              RomanticoItem(
                   image: "assets/15.png",
                   name: "Amor Encanto",
                   value: "R\$ 139,00"),
-              FlowerItem(
+              RomanticoItem(
                 image: "assets/16.png",
                 name: "Duetto",
                 value: "R\$ 150,00",
               ),
-              FlowerItem(
+              RomanticoItem(
                   image: "assets/14.png",
                   name: "Singelo Amor",
                   value: "R\$ 111,00"),
@@ -185,12 +182,12 @@ class FlowersList extends StatelessWidget {
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: const [
-              FlowerItem(
+              RomanticoItem(
                 image: "assets/18.png",
                 name: "Amo Você",
                 value: "R\$ 233,00",
               ),
-              FlowerItem(
+              RomanticoItem(
                 image: "assets/10.png",
                 name: "Rustic Chic",
                 value: "R\$ 220,00",
@@ -203,8 +200,8 @@ class FlowersList extends StatelessWidget {
   }
 }
 
-class FlowerItem extends StatelessWidget {
-  const FlowerItem({
+class RomanticoItem extends StatelessWidget {
+  const RomanticoItem({
     Key? key,
     required this.image,
     required this.name,

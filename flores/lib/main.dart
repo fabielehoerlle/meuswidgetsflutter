@@ -1,3 +1,4 @@
+import 'package:flores/pages/AniversarioPage.dart';
 import 'package:flores/pages/BebePage.dart';
 import 'package:flores/pages/HomePage.dart';
 import 'package:flores/pages/RomanticoPage.dart';
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.white,
       ),
-      home: const BebePage(),
+      home: const AniversarioPage(),
     );
   }
 }
