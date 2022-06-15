@@ -86,7 +86,7 @@ flutter:
   - assets/visa.png
   - assets/master.png
   - assets/dinners.png
-  - assets/amor.png
+  - assets/romantico1.png
   - assets/flor.png
   - assets/caixa.png
   - assets/7.png
@@ -116,9 +116,16 @@ flutter:
   - assets/30.png
   - assets/aniversario1.png
   - assets/31.png
+  - assets/32.png
+  - assets/33.png
+  - assets/34.png
   - assets/35.png
   - assets/36.png
   - assets/37.png
+  - assets/38.png
+  - assets/39.png
+  - assets/40.png
+  - assets/41.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

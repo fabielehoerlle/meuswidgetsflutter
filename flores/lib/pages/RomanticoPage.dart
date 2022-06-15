@@ -36,7 +36,7 @@ class RomanticoBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Image.asset("assets/amor.png"),
+        Image.asset("assets/romantico1.png"),
         Column(
           children: const [
             SeparatorDestaque(

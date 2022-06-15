@@ -83,57 +83,63 @@ class AniversariosList extends StatelessWidget {
             children: const [
               AniversarioItem(
                   image: "assets/31.png",
-                  name: "Mimo Colorido",
-                  value: "R\$ 79,00"),
+                  name: "La Belle",
+                  value: "R\$ 340,00"),
               AniversarioItem(
-                  image: "assets/29.png", name: "Parabéns", value: "R\$ 89,00"),
+                  image: "assets/32.png",
+                  name: "Parabéns",
+                  value: "R\$ 289,00"),
               AniversarioItem(
-                  image: "assets/21.png",
-                  name: "Nana Menino",
-                  value: "R\$ 345,00"),
+                  image: "assets/33.png",
+                  name: "Mix Colors",
+                  value: "R\$ 190,00"),
             ],
           ),
           Row(
             children: const [
               AniversarioItem(
-                  image: "assets/25.png",
-                  name: "Nana Menina",
-                  value: "R\$ 345,00"),
+                  image: "assets/34.png",
+                  name: "Delícias da Manhã",
+                  value: "R\$ 295,00"),
               AniversarioItem(
                   image: "assets/35.png",
-                  name: "Box Baby",
-                  value: "R\$ 199,00"),
+                  name: "Grande Festa",
+                  value: "R\$ 350,00"),
               AniversarioItem(
                   image: "assets/36.png",
-                  name: "La Belle",
-                  value: "R\$ 340,00"),
+                  name: "Cesta Parabéns",
+                  value: "R\$ 165,00"),
             ],
           ),
           Row(
             children: const [
               AniversarioItem(
                   image: "assets/37.png",
-                  name: "Mix Colors",
-                  value: "R\$ 190,00"),
+                  name: "Happy Birthday",
+                  value: "R\$ 266,00"),
               AniversarioItem(
-                  image: "assets/25.png",
-                  name: "Pequena Fofura",
-                  value: "R\$ 175,00"),
+                  image: "assets/38.png",
+                  name: "Mimo Colorido",
+                  value: "R\$ 79,00"),
               AniversarioItem(
-                  image: "assets/21.png",
-                  name: "Baby Urso",
-                  value: "R\$ 189,00"),
+                image: "assets/39.png",
+                name: "Orquídea Birthday",
+                value: "Produto esgotado",
+                enabled: false,
+              ),
             ],
           ),
           Row(
             children: const [
               AniversarioItem(
-                  image: "assets/30.png",
-                  name: "Girl Fofura",
-                  value: "R\$ 175,00"),
+                image: "assets/40.png",
+                name: "Fina Orquídea",
+                value: "Produto esgotado",
+                enabled: false,
+              ),
               AniversarioItem(
-                image: "assets/24.png",
-                name: "Bem Vinda Menina",
+                image: "assets/41.png",
+                name: "Arranjo Girassóis",
                 value: "Produto esgotado",
                 enabled: false,
               )
@@ -160,7 +166,7 @@ class AniversarioItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double opacity = enabled ? 1 : 0.2;
+    double opacity = enabled ? 1 : 0.5;
 
     return Opacity(
       opacity: opacity,

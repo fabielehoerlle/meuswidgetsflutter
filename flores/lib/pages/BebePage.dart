@@ -160,7 +160,7 @@ class BebeItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double opacity = enabled ? 1 : 0.2;
+    double opacity = enabled ? 1 : 0.5;
 
     return Opacity(
       opacity: opacity,
