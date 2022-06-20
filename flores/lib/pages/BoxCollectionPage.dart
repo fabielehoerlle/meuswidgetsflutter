@@ -4,8 +4,8 @@ import 'package:flores/widgets/SearchSidebar.dart';
 import 'package:flores/widgets/SeparatorDestaque.dart';
 import 'package:flutter/material.dart';
 
-class AniversarioPage extends StatelessWidget {
-  const AniversarioPage({Key? key}) : super(key: key);
+class BoxCollectionPage extends StatelessWidget {
+  const BoxCollectionPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class AniversarioPage extends StatelessWidget {
             child: SingleChildScrollView(
               child: Column(
                 children: const [
-                  AniversarioBody(),
+                  BoxCollectionBody(),
                   Footer(),
                 ],
               ),
@@ -29,19 +29,18 @@ class AniversarioPage extends StatelessWidget {
   }
 }
 
-class AniversarioBody extends StatelessWidget {
-  const AniversarioBody({Key? key}) : super(key: key);
+class BoxCollectionBody extends StatelessWidget {
+  const BoxCollectionBody({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Image.asset("assets/aniversario1.png"),
+        Image.asset("assets/boxcollection.png"),
         Column(
           children: const [
             SeparatorDestaque(
-                text: "Presentes para Aniversário",
-                image: "assets/coracao.png"),
+                text: "Box Collection", image: "assets/coracao.png"),
             SearchBody(),
           ],
         ),
@@ -62,7 +61,7 @@ class SearchBody extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: const [
             SearchSidebar(),
-            AniversariosList(),
+            BoxCollectionsList(),
           ],
         ),
       ),
@@ -70,8 +69,8 @@ class SearchBody extends StatelessWidget {
   }
 }
 
-class AniversariosList extends StatelessWidget {
-  const AniversariosList({Key? key}) : super(key: key);
+class BoxCollectionsList extends StatelessWidget {
+  const BoxCollectionsList({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -81,68 +80,67 @@ class AniversariosList extends StatelessWidget {
         children: [
           Row(
             children: const [
-              AniversarioItem(
-                  image: "assets/31.png",
-                  name: "La Belle",
-                  value: "R\$ 340,00"),
-              AniversarioItem(
-                  image: "assets/32.png",
-                  name: "Parabéns",
-                  value: "R\$ 289,00"),
-              AniversarioItem(
-                  image: "assets/33.png",
-                  name: "Mix Colors",
-                  value: "R\$ 190,00"),
+              BoxCollectionItem(
+                  image: "assets/17.png",
+                  name: "Box Flower",
+                  value: "R\$ 260,00"),
+              BoxCollectionItem(
+                  image: "assets/20.png",
+                  name: "Box Welcome Baby",
+                  value: "R\$ 220,00"),
+              BoxCollectionItem(
+                  image: "assets/19.png",
+                  name: "Box Amor",
+                  value: "R\$ 250,00"),
             ],
           ),
           Row(
             children: const [
-              AniversarioItem(
-                  image: "assets/34.png",
-                  name: "Delícias da Manhã",
-                  value: "R\$ 295,00"),
-              AniversarioItem(
-                  image: "assets/35.png",
-                  name: "Grande Festa",
-                  value: "R\$ 350,00"),
-              AniversarioItem(
-                  image: "assets/36.png",
-                  name: "Cesta Parabéns",
-                  value: "R\$ 165,00"),
+              BoxCollectionItem(
+                  image: "assets/28.png",
+                  name: "Box Baby",
+                  value: "R\$ 199,00"),
+              BoxCollectionItem(
+                  image: "assets/30.png",
+                  name: "Box Girl Fofura",
+                  value: "R\$ 175,00"),
+              BoxCollectionItem(
+                  image: "assets/44.png",
+                  name: "Box Sweet",
+                  value: "R\$ 150,00"),
             ],
           ),
           Row(
             children: const [
-              AniversarioItem(
-                  image: "assets/37.png",
-                  name: "Happy Birthday",
-                  value: "R\$ 266,00"),
-              AniversarioItem(
-                  image: "assets/38.png",
-                  name: "Mimo Colorido",
-                  value: "R\$ 79,00"),
-              AniversarioItem(
-                image: "assets/39.png",
-                name: "Orquídea Birthday",
-                value: "Produto esgotado",
-                enabled: false,
+              BoxCollectionItem(
+                  image: "assets/29.png",
+                  name: "Box Baby Girl",
+                  value: "R\$ 199,00"),
+              BoxCollectionItem(
+                  image: "assets/43.png",
+                  name: "Box Alegria",
+                  value: "R\$ 128,00"),
+              BoxCollectionItem(
+                image: "assets/42.png",
+                name: "Box Colors",
+                value: "R\$ 159,00",
               ),
             ],
           ),
           Row(
             children: const [
-              AniversarioItem(
-                image: "assets/40.png",
-                name: "Fina Orquídea",
+              BoxCollectionItem(
+                image: "assets/18.png",
+                name: "Box Amo Você",
                 value: "Produto esgotado",
                 enabled: false,
               ),
-              AniversarioItem(
+              BoxCollectionItem(
                 image: "assets/41.png",
                 name: "Box Girassóis",
                 value: "Produto esgotado",
                 enabled: false,
-              )
+              ),
             ],
           ),
         ],
@@ -151,8 +149,8 @@ class AniversariosList extends StatelessWidget {
   }
 }
 
-class AniversarioItem extends StatelessWidget {
-  const AniversarioItem({
+class BoxCollectionItem extends StatelessWidget {
+  const BoxCollectionItem({
     Key? key,
     required this.image,
     required this.name,

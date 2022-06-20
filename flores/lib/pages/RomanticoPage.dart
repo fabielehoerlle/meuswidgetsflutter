@@ -157,7 +157,7 @@ class RomanticosList extends StatelessWidget {
               ),
               RomanticoItem(
                 image: "assets/19.png",
-                name: "Amor",
+                name: "Box Amor",
                 value: "R\$ 250,00",
               ),
             ],
@@ -184,7 +184,7 @@ class RomanticosList extends StatelessWidget {
             children: const [
               RomanticoItem(
                 image: "assets/18.png",
-                name: "Amo Você",
+                name: "Box Amo Você",
                 value: "R\$ 233,00",
               ),
               RomanticoItem(

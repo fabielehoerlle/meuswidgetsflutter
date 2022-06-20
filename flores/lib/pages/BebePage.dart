@@ -81,11 +81,11 @@ class BebesList extends StatelessWidget {
             children: const [
               BebeItem(
                   image: "assets/20.png",
-                  name: "Welcome Baby",
+                  name: "Box Welcome Baby",
                   value: "R\$ 220,00"),
               BebeItem(
                   image: "assets/29.png",
-                  name: "Baby Girl",
+                  name: "Box Baby Girl",
                   value: "R\$ 199,00"),
               BebeItem(
                   image: "assets/27.png",
@@ -129,7 +129,7 @@ class BebesList extends StatelessWidget {
             children: const [
               BebeItem(
                   image: "assets/30.png",
-                  name: "Girl Fofura",
+                  name: "Box Girl Fofura",
                   value: "R\$ 175,00"),
               BebeItem(
                 image: "assets/24.png",
