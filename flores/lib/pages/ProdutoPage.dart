@@ -56,15 +56,145 @@ class ProdutoBody extends StatelessWidget {
           Row(
             children: [
               Container(
-                height: 500,
                 width: 550,
-                color: Colors.grey,
+                child: Image.asset(
+                  "assets/9.png",
+                  width: 500,
+                ),
               ),
               Column(
-                children: const [
-                  Text("Garden Roses"),
-                  Text("REF: 10605"),
-                  Text("R\$ 438,00"),
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text(
+                    "Buque My Love",
+                    style: TextStyle(
+                      fontSize: 22,
+                      color: Colors.red,
+                    ),
+                  ),
+                  const SizedBox(height: 5),
+                  const Text(
+                    "REF: 10605",
+                    style: TextStyle(
+                      fontSize: 12,
+                      color: Colors.grey,
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                  const Text(
+                    "R\$ 166,00",
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const SizedBox(height: 15),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      fixedSize: const Size(140, 30),
+                      primary: Colors.red,
+                      onPrimary: Colors.white,
+                    ),
+                    onPressed: () {},
+                    child: const Text(
+                      "COMPRAR",
+                      style: TextStyle(
+                        fontSize: 12,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 25),
+                  Container(
+                    width: 400,
+                    height: 1,
+                    color: Colors.grey,
+                  ),
+                  const SizedBox(height: 10),
+                  const Text(
+                    "DESCRIÇÃO",
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const SizedBox(height: 15),
+                  Container(
+                    width: 350,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: const [
+                        Text(
+                          "Um buquê que traz a beleza das rosas importadas com uma " +
+                              "embalagem simples e elegante.",
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: Colors.black,
+                          ),
+                        ),
+                        SizedBox(height: 5),
+                        Text(
+                          "Buquê com 20 rosas importadas em embalagem kraft e laço " +
+                              "de cetim.",
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: Colors.black,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                  RichText(
+                    text: const TextSpan(
+                      text: "DIGITE O CEP PARA ENTREGA",
+                      style: TextStyle(
+                        fontSize: 10,
+                        color: Colors.black,
+                      ),
+                      children: [
+                        TextSpan(
+                          text: "  (Procurar CEP)",
+                          style: TextStyle(color: Colors.red),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height: 10),
+                  Container(
+                    width: 300,
+                    child: TextField(
+                      cursorColor: Colors.grey,
+                      decoration: InputDecoration(
+                        focusedBorder: const UnderlineInputBorder(
+                          borderSide: BorderSide(color: Colors.grey),
+                        ),
+                        suffixIcon: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            primary: Colors.red,
+                            onPrimary: Colors.white,
+                          ),
+                          onPressed: () {},
+                          child: const Text(
+                            "CONSULTAR ENTREGA",
+                            style: TextStyle(
+                              fontSize: 12,
+                            ),
+                          ),
+                        ),
+                        labelText: "CEP",
+                        labelStyle: const TextStyle(
+                          fontSize: 12,
+                          color: Colors.grey,
+                        ),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 50),
+                  Container(
+                    width: 400,
+                    height: 1,
+                    color: Colors.grey,
+                  ),
                 ],
               ),
             ],
