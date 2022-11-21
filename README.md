@@ -1,2 +1,2 @@
-# meus-widgets-flutter
-Uma coleção de Widgets Flutter que criei para estudar
+# meuswidgetsflutter
+Uma coleção de Widgets Flutter que criei para estudar.
