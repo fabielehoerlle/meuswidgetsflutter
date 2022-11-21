@@ -1,3 +1,4 @@
+import 'package:flores/data/boxCollections.data.dart';
 import 'package:flores/widgets/Footer.dart';
 import 'package:flores/widgets/Header.dart';
 import 'package:flores/widgets/SearchSidebar.dart';
@@ -76,75 +77,21 @@ class BoxCollectionsList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 600,
-      child: Column(
-        children: [
-          Row(
-            children: const [
-              BoxCollectionItem(
-                  image: "assets/17.png",
-                  name: "Box Flower",
-                  value: "R\$ 260,00"),
-              BoxCollectionItem(
-                  image: "assets/20.png",
-                  name: "Box Welcome Baby",
-                  value: "R\$ 220,00"),
-              BoxCollectionItem(
-                  image: "assets/19.png",
-                  name: "Box Amor",
-                  value: "R\$ 250,00"),
-            ],
+      child: GridView.builder(
+          shrinkWrap: true,
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 3,
+            childAspectRatio: 0.63,
           ),
-          Row(
-            children: const [
-              BoxCollectionItem(
-                  image: "assets/28.png",
-                  name: "Box Baby",
-                  value: "R\$ 199,00"),
-              BoxCollectionItem(
-                  image: "assets/30.png",
-                  name: "Box Girl Fofura",
-                  value: "R\$ 175,00"),
-              BoxCollectionItem(
-                  image: "assets/44.png",
-                  name: "Box Sweet",
-                  value: "R\$ 150,00"),
-            ],
-          ),
-          Row(
-            children: const [
-              BoxCollectionItem(
-                  image: "assets/29.png",
-                  name: "Box Baby Girl",
-                  value: "R\$ 199,00"),
-              BoxCollectionItem(
-                  image: "assets/43.png",
-                  name: "Box Alegria",
-                  value: "R\$ 128,00"),
-              BoxCollectionItem(
-                image: "assets/42.png",
-                name: "Box Colors",
-                value: "R\$ 159,00",
-              ),
-            ],
-          ),
-          Row(
-            children: const [
-              BoxCollectionItem(
-                image: "assets/18.png",
-                name: "Box Amo Você",
-                value: "Produto esgotado",
-                enabled: false,
-              ),
-              BoxCollectionItem(
-                image: "assets/41.png",
-                name: "Box Girassóis",
-                value: "Produto esgotado",
-                enabled: false,
-              ),
-            ],
-          ),
-        ],
-      ),
+          itemCount: boxCollectionProducts.length,
+          itemBuilder: (_, index) {
+            return BoxCollectionItem(
+              image: boxCollectionProducts[index].image,
+              name: boxCollectionProducts[index].name,
+              value: boxCollectionProducts[index].formatPrice(),
+              enabled: boxCollectionProducts[index].enabled,
+            );
+          }),
     );
   }
 }
