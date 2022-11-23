@@ -1,3 +1,4 @@
+import 'package:flores/data/birthday.data.dart';
 import 'package:flores/widgets/Footer.dart';
 import 'package:flores/widgets/Header.dart';
 import 'package:flores/widgets/SearchSidebar.dart';
@@ -77,75 +78,21 @@ class AniversariosList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 600,
-      child: Column(
-        children: [
-          Row(
-            children: const [
-              AniversarioItem(
-                  image: "assets/31.png",
-                  name: "La Belle",
-                  value: "R\$ 340,00"),
-              AniversarioItem(
-                  image: "assets/32.png",
-                  name: "Parabéns",
-                  value: "R\$ 289,00"),
-              AniversarioItem(
-                  image: "assets/33.png",
-                  name: "Mix Colors",
-                  value: "R\$ 190,00"),
-            ],
-          ),
-          Row(
-            children: const [
-              AniversarioItem(
-                  image: "assets/34.png",
-                  name: "Delícias da Manhã",
-                  value: "R\$ 295,00"),
-              AniversarioItem(
-                  image: "assets/35.png",
-                  name: "Grande Festa",
-                  value: "R\$ 350,00"),
-              AniversarioItem(
-                  image: "assets/36.png",
-                  name: "Cesta Parabéns",
-                  value: "R\$ 165,00"),
-            ],
-          ),
-          Row(
-            children: const [
-              AniversarioItem(
-                  image: "assets/37.png",
-                  name: "Happy Birthday",
-                  value: "R\$ 266,00"),
-              AniversarioItem(
-                  image: "assets/38.png",
-                  name: "Mimo Colorido",
-                  value: "R\$ 79,00"),
-              AniversarioItem(
-                image: "assets/39.png",
-                name: "Orquídea Birthday",
-                value: "Produto esgotado",
-                enabled: false,
-              ),
-            ],
-          ),
-          Row(
-            children: const [
-              AniversarioItem(
-                image: "assets/40.png",
-                name: "Fina Orquídea",
-                value: "Produto esgotado",
-                enabled: false,
-              ),
-              AniversarioItem(
-                image: "assets/41.png",
-                name: "Box Girassóis",
-                value: "Produto esgotado",
-                enabled: false,
-              )
-            ],
-          ),
-        ],
+      child: GridView.builder(
+        shrinkWrap: true,
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          childAspectRatio: 0.63,
+          crossAxisCount: 3,
+        ),
+        itemCount: birthdayProducts.length,
+        itemBuilder: (_, index) {
+          return AniversarioItem(
+            image: birthdayProducts[index].image,
+            name: birthdayProducts[index].name,
+            value: birthdayProducts[index].formatPrice(),
+            enabled: birthdayProducts[index].enabled,
+          );
+        },
       ),
     );
   }

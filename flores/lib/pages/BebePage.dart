@@ -1,3 +1,4 @@
+import 'package:flores/data/baby.data.dart';
 import 'package:flores/widgets/Footer.dart';
 import 'package:flores/widgets/Header.dart';
 import 'package:flores/widgets/SearchSidebar.dart';
@@ -75,72 +76,21 @@ class BebesList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 600,
-      child: Column(
-        children: [
-          Row(
-            children: const [
-              BebeItem(
-                  image: "assets/20.png",
-                  name: "Box Welcome Baby",
-                  value: "R\$ 220,00"),
-              BebeItem(
-                  image: "assets/29.png",
-                  name: "Box Baby Girl",
-                  value: "R\$ 199,00"),
-              BebeItem(
-                  image: "assets/27.png",
-                  name: "Nana Menino",
-                  value: "R\$ 345,00"),
-            ],
+      child: GridView.builder(
+          shrinkWrap: true,
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 3,
+            childAspectRatio: 0.63,
           ),
-          Row(
-            children: const [
-              BebeItem(
-                  image: "assets/22.png",
-                  name: "Nana Menina",
-                  value: "R\$ 345,00"),
-              BebeItem(
-                  image: "assets/28.png",
-                  name: "Box Baby",
-                  value: "R\$ 199,00"),
-              BebeItem(
-                  image: "assets/23.png",
-                  name: "É uma menina",
-                  value: "R\$ 119,00"),
-            ],
-          ),
-          Row(
-            children: const [
-              BebeItem(
-                  image: "assets/26.png",
-                  name: "É um menino",
-                  value: "R\$ 119,00"),
-              BebeItem(
-                  image: "assets/25.png",
-                  name: "Pequena Fofura",
-                  value: "R\$ 175,00"),
-              BebeItem(
-                  image: "assets/21.png",
-                  name: "Baby Urso",
-                  value: "R\$ 189,00"),
-            ],
-          ),
-          Row(
-            children: const [
-              BebeItem(
-                  image: "assets/30.png",
-                  name: "Box Girl Fofura",
-                  value: "R\$ 175,00"),
-              BebeItem(
-                image: "assets/24.png",
-                name: "Bem Vinda Menina",
-                value: "Produto esgotado",
-                enabled: false,
-              )
-            ],
-          ),
-        ],
-      ),
+          itemCount: babyProducts.length,
+          itemBuilder: (_, index) {
+            return BebeItem(
+              image: babyProducts[index].image,
+              name: babyProducts[index].name,
+              value: babyProducts[index].formatPrice(),
+              enabled: babyProducts[index].enabled,
+            );
+          }),
     );
   }
 }

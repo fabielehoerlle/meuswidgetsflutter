@@ -15,6 +15,9 @@ class ProductData {
     int reais = this.price.toInt();
     int centavos = ((this.price - reais) * 100).toInt();
     String formatado = "R\$ $reais,${centavos.toString().padRight(2, "0")}";
+    if (this.enabled == false) {
+      return "Produto Esgotado";
+    }
     return formatado;
   }
 }
