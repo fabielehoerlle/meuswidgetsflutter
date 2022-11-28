@@ -2,7 +2,6 @@ import 'package:flores/data/boxCollections.data.dart';
 import 'package:flores/widgets/Footer.dart';
 import 'package:flores/widgets/Header.dart';
 import 'package:flores/widgets/ProductItem.dart';
-import 'package:flores/widgets/SeparatorDestaque.dart';
 import 'package:flutter/material.dart';
 
 class SearchPage extends StatelessWidget {
@@ -35,16 +34,21 @@ class SearchPageBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Column(
-          children: const [
-            SeparatorDestaque(
-                text: "Resultados de Busca", image: "assets/coracao.png"),
-            SearchList(),
-          ],
-        ),
-      ],
+    return Padding(
+      padding: const EdgeInsets.only(left: 40, right: 40, top: 50),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: const [
+          Text(
+            "Resultados de busca:",
+            style: TextStyle(
+              fontSize: 14,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          SearchList(),
+        ],
+      ),
     );
   }
 }
@@ -58,9 +62,9 @@ class SearchList extends StatelessWidget {
       //width: 600,
       child: GridView.builder(
           shrinkWrap: true,
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 4,
-            childAspectRatio: 1,
+            childAspectRatio: 0.96,
           ),
           itemCount: boxCollectionProducts.length,
           itemBuilder: (_, index) {

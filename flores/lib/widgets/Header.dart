@@ -13,7 +13,7 @@ class Header extends StatelessWidget {
         HeaderMenu(
           onSearch: onSearch,
         ),
-        if (false) SearchBar(),
+        if (true) SearchBar(),
       ],
     );
   }
@@ -38,8 +38,19 @@ class SearchBar extends StatelessWidget {
         children: const [
           Expanded(
             child: TextField(
+              cursorColor: Colors.grey,
               decoration: InputDecoration(
-                suffixIcon: Icon(Icons.search_outlined),
+                focusedBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.grey,
+                  ),
+                ),
+                suffixIcon: Icon(
+                  Icons.search_outlined,
+                  color: Colors.grey,
+                ),
+                labelText: "Sua busca...",
+                labelStyle: TextStyle(color: Colors.grey),
               ),
             ),
           ),
