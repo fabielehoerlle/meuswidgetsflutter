@@ -4,6 +4,7 @@ import 'package:flores/pages/BoxCollectionPage.dart';
 import 'package:flores/pages/HomePage.dart';
 import 'package:flores/pages/ProdutoPage.dart';
 import 'package:flores/pages/RomanticoPage.dart';
+import 'package:flores/pages/SearchPage.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.white,
       ),
-      home: const BebePage(),
+      home: const SearchPage(),
     );
   }
 }

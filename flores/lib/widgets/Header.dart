@@ -8,10 +8,43 @@ class Header extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: const [
+      children: [
         BarraVerde(),
-        HeaderMenu(),
+        HeaderMenu(
+          onSearch: onSearch,
+        ),
+        if (false) SearchBar(),
       ],
+    );
+  }
+
+  void onSearch(
+    String q,
+  ) {
+    print("Chegou Aqui $q");
+  }
+}
+
+class SearchBar extends StatelessWidget {
+  const SearchBar({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 40),
+      child: Row(
+        children: const [
+          Expanded(
+            child: TextField(
+              decoration: InputDecoration(
+                suffixIcon: Icon(Icons.search_outlined),
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
@@ -19,7 +52,10 @@ class Header extends StatelessWidget {
 class HeaderMenu extends StatelessWidget {
   const HeaderMenu({
     Key? key,
+    required this.onSearch,
   }) : super(key: key);
+
+  final Function onSearch;
 
   @override
   Widget build(BuildContext context) {
@@ -121,7 +157,9 @@ class HeaderMenu extends StatelessWidget {
             ),
           ),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              onSearch("Fabiele");
+            },
             icon: const Icon(
               Icons.search_outlined,
               color: Colors.grey,
