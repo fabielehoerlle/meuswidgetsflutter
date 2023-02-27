@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:w20230215/pages/ResetPasswordPage.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -8,6 +9,7 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        color: Colors.white,
         padding: const EdgeInsets.only(top: 60, left: 40, right: 40),
         child: ListView(
           children: [
@@ -51,7 +53,14 @@ class LoginPage extends StatelessWidget {
               height: 40,
               alignment: Alignment.centerRight,
               child: TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ResetPasswordPage(),
+                    ),
+                  );
+                },
                 child: const Text(
                   "Recuperar Senha",
                   style: TextStyle(

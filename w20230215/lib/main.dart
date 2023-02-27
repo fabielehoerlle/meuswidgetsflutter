@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:w20230215/pages/LoginPage.dart';
+import 'package:w20230215/pages/ResetPasswordPage.dart';
 
 void main() {
   runApp(
