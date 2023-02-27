@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
 
-class Header extends StatelessWidget {
+class Header extends StatefulWidget {
   const Header({
     Key? key,
   }) : super(key: key);
+
+  @override
+  State<Header> createState() => _HeaderState();
+}
+
+class _HeaderState extends State<Header> {
+  bool showSearchBar = false;
 
   @override
   Widget build(BuildContext context) {
@@ -11,17 +18,17 @@ class Header extends StatelessWidget {
       children: [
         BarraVerde(),
         HeaderMenu(
-          onSearch: onSearch,
+          onClickSearch: onClickSearch,
         ),
-        if (true) SearchBar(),
+        if (showSearchBar) SearchBar(),
       ],
     );
   }
 
-  void onSearch(
-    String q,
-  ) {
-    print("Chegou Aqui $q");
+  void onClickSearch() {
+    setState(() {
+      showSearchBar = !showSearchBar;
+    });
   }
 }
 
@@ -63,10 +70,10 @@ class SearchBar extends StatelessWidget {
 class HeaderMenu extends StatelessWidget {
   const HeaderMenu({
     Key? key,
-    required this.onSearch,
+    required this.onClickSearch,
   }) : super(key: key);
 
-  final Function onSearch;
+  final void Function() onClickSearch;
 
   @override
   Widget build(BuildContext context) {
@@ -169,7 +176,7 @@ class HeaderMenu extends StatelessWidget {
           ),
           IconButton(
             onPressed: () {
-              onSearch("Fabiele");
+              onClickSearch();
             },
             icon: const Icon(
               Icons.search_outlined,

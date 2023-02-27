@@ -1,4 +1,7 @@
+int _currentId = 0;
+
 class ProductData {
+  late int id;
   final String image;
   final String name;
   final double price;
@@ -9,7 +12,15 @@ class ProductData {
     required this.name,
     required this.price,
     this.enabled = true,
-  }) {}
+    this.id = 0,
+  }) {
+    id = _generateId();
+  }
+
+  int _generateId() {
+    _currentId = _currentId + 1;
+    return _currentId;
+  }
 
   String formatPrice() {
     int reais = this.price.toInt();

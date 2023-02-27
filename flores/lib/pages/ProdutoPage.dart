@@ -1,9 +1,14 @@
+import 'package:flores/data/classes.dart';
 import 'package:flores/widgets/Footer.dart';
 import 'package:flores/widgets/Header.dart';
 import 'package:flutter/material.dart';
 
 class ProdutoPage extends StatelessWidget {
-  const ProdutoPage({Key? key}) : super(key: key);
+  final ProductData produto;
+  const ProdutoPage({
+    Key? key,
+    required this.produto,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,8 +19,8 @@ class ProdutoPage extends StatelessWidget {
           Expanded(
             child: SingleChildScrollView(
               child: Column(
-                children: const [
-                  ProdutoBody(),
+                children: [
+                  ProdutoBody(produto: produto),
                   Footer(),
                 ],
               ),
@@ -28,7 +33,11 @@ class ProdutoPage extends StatelessWidget {
 }
 
 class ProdutoBody extends StatelessWidget {
-  const ProdutoBody({Key? key}) : super(key: key);
+  final ProductData produto;
+  const ProdutoBody({
+    Key? key,
+    required this.produto,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -65,25 +74,25 @@ class ProdutoBody extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
-                    "Buque My Love",
-                    style: TextStyle(
+                  Text(
+                    produto.name,
+                    style: const TextStyle(
                       fontSize: 22,
                       color: Colors.red,
                     ),
                   ),
                   const SizedBox(height: 5),
-                  const Text(
-                    "REF: 10605",
-                    style: TextStyle(
+                  Text(
+                    "REF: 000${produto.id}",
+                    style: const TextStyle(
                       fontSize: 12,
                       color: Colors.grey,
                     ),
                   ),
                   const SizedBox(height: 20),
-                  const Text(
-                    "R\$ 166,00",
-                    style: TextStyle(
+                  Text(
+                    "${produto.formatPrice()}",
+                    style: const TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                     ),
@@ -92,8 +101,8 @@ class ProdutoBody extends StatelessWidget {
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       fixedSize: const Size(140, 30),
-                      primary: Colors.red,
-                      onPrimary: Colors.white,
+                      backgroundColor: Colors.red,
+                      foregroundColor: Colors.white,
                     ),
                     onPressed: () {},
                     child: const Text(
@@ -124,8 +133,7 @@ class ProdutoBody extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: const [
                         Text(
-                          "Um buquê que traz a beleza das rosas importadas com uma " +
-                              "embalagem simples e elegante.",
+                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
                           style: TextStyle(
                             fontSize: 12,
                             color: Colors.black,
@@ -133,8 +141,7 @@ class ProdutoBody extends StatelessWidget {
                         ),
                         SizedBox(height: 5),
                         Text(
-                          "Buquê com 20 rosas importadas em embalagem kraft e laço " +
-                              "de cetim.",
+                          "quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.",
                           style: TextStyle(
                             fontSize: 12,
                             color: Colors.black,
@@ -170,8 +177,8 @@ class ProdutoBody extends StatelessWidget {
                         ),
                         suffixIcon: ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            primary: Colors.red,
-                            onPrimary: Colors.white,
+                            backgroundColor: Colors.red,
+                            foregroundColor: Colors.white,
                           ),
                           onPressed: () {},
                           child: const Text(

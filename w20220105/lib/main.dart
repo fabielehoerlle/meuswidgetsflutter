@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
+import 'package:w20220105/pages/Detalhes.dart';
 import 'package:w20220105/pages/HomePage.dart';
 
 void main() {
@@ -53,7 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: HomePage(),
+      body: const HomePage(),
     );
   }
 }

@@ -79,9 +79,9 @@ class BoxCollectionsList extends StatelessWidget {
       width: 600,
       child: GridView.builder(
           shrinkWrap: true,
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 3,
-            childAspectRatio: 0.63,
+            childAspectRatio: 0.621,
           ),
           itemCount: boxCollectionProducts.length,
           itemBuilder: (_, index) {

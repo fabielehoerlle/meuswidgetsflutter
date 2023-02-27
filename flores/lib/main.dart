@@ -1,13 +1,8 @@
-import 'package:flores/pages/AniversarioPage.dart';
-import 'package:flores/pages/BebePage.dart';
-import 'package:flores/pages/BoxCollectionPage.dart';
-import 'package:flores/pages/HomePage.dart';
-import 'package:flores/pages/ProdutoPage.dart';
-import 'package:flores/pages/RomanticoPage.dart';
-import 'package:flores/pages/SearchPage.dart';
+import 'package:flores/router.dart';
 import 'package:flutter/material.dart';
 
 void main() {
+  CustomRouter.setupRouter();
   runApp(const MyApp());
 }
 
@@ -22,7 +17,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.white,
       ),
-      home: const SearchPage(),
+      initialRoute: '/',
+      onGenerateRoute: CustomRouter.router.generator,
     );
   }
 }
