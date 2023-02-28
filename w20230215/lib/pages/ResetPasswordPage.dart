@@ -13,7 +13,7 @@ class ResetPasswordPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         leading: IconButton(
-          onPressed: () => Navigator.pop(context, false),
+          onPressed: () => Navigator.pop(context),
           icon: const Icon(Icons.arrow_back),
           color: Colors.black38,
         ),
@@ -50,12 +50,11 @@ class ResetPasswordPage extends StatelessWidget {
               ),
               textAlign: TextAlign.center,
             ),
-            const SizedBox(
-              height: 20,
-            ),
+            const SizedBox(height: 30),
             TextFormField(
               keyboardType: TextInputType.emailAddress,
               decoration: const InputDecoration(
+                border: OutlineInputBorder(),
                 labelText: "E-mail",
                 labelStyle: TextStyle(
                   color: Colors.black38,
@@ -97,6 +96,7 @@ class ResetPasswordPage extends StatelessWidget {
                 ),
               ),
             ),
+            const SizedBox(height: 20),
           ],
         ),
       ),

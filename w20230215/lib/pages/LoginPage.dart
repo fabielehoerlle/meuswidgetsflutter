@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:w20230215/pages/ResetPasswordPage.dart';
+import 'package:w20230215/pages/Signup.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -10,7 +11,7 @@ class LoginPage extends StatelessWidget {
     return Scaffold(
       body: Container(
         color: Colors.white,
-        padding: const EdgeInsets.only(top: 60, left: 40, right: 40),
+        padding: const EdgeInsets.only(top: 50, left: 40, right: 40),
         child: ListView(
           children: [
             Image.asset(
@@ -18,10 +19,11 @@ class LoginPage extends StatelessWidget {
               height: 128,
               width: 128,
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 30),
             TextFormField(
               keyboardType: TextInputType.emailAddress,
               decoration: const InputDecoration(
+                border: OutlineInputBorder(),
                 labelText: "E-mail",
                 labelStyle: TextStyle(
                   color: Colors.black38,
@@ -33,22 +35,8 @@ class LoginPage extends StatelessWidget {
                 fontSize: 20,
               ),
             ),
-            const SizedBox(height: 10),
-            TextFormField(
-              obscureText: true,
-              keyboardType: TextInputType.text,
-              decoration: const InputDecoration(
-                labelText: "Senha",
-                labelStyle: TextStyle(
-                  color: Colors.black38,
-                  fontWeight: FontWeight.w400,
-                  fontSize: 20,
-                ),
-              ),
-              style: const TextStyle(
-                fontSize: 20,
-              ),
-            ),
+            const SizedBox(height: 20),
+            const PasswordField(),
             Container(
               height: 40,
               alignment: Alignment.centerRight,
@@ -147,7 +135,14 @@ class LoginPage extends StatelessWidget {
             Container(
               height: 40,
               child: TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const SignupPage(),
+                    ),
+                  );
+                },
                 child: const Text(
                   "Cadastre-se",
                   style: TextStyle(
