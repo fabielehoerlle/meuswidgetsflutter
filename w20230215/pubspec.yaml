@@ -69,6 +69,9 @@ flutter:
   - assets/fb-icon.png
   - assets/reset-password-icon.png
   - assets/profile-picture.png
+  - assets/app-logo.png
+  - assets/user-picture.png
+  - assets/post-picture-001.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
