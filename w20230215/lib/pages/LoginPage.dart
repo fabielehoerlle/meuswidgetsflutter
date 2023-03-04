@@ -3,8 +3,37 @@ import 'package:flutter/material.dart';
 import 'package:w20230215/pages/ResetPasswordPage.dart';
 import 'package:w20230215/pages/Signup.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
+
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  final TextEditingController loginController = TextEditingController();
+  final passController = TextEditingController();
+  String? loginErrorText;
+  String? passErrorText;
+
+  @override
+  void dispose() {
+    loginController.dispose();
+    passController.dispose();
+    super.dispose();
+  }
+
+  void login() {
+    setState(() {
+      if (loginController.text == "") {
+        loginErrorText = "Preencha seu e-mail";
+      }
+
+      if (passController.text == "") {
+        passErrorText = "Preencha sua senha";
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -21,11 +50,18 @@ class LoginPage extends StatelessWidget {
             ),
             const SizedBox(height: 30),
             TextFormField(
+              controller: loginController,
               keyboardType: TextInputType.emailAddress,
-              decoration: const InputDecoration(
-                border: OutlineInputBorder(),
+              onChanged: (value) {
+                setState(() {
+                  loginErrorText = null;
+                });
+              },
+              decoration: InputDecoration(
+                errorText: loginErrorText,
+                border: const OutlineInputBorder(),
                 labelText: "E-mail",
-                labelStyle: TextStyle(
+                labelStyle: const TextStyle(
                   color: Colors.black38,
                   fontWeight: FontWeight.w400,
                   fontSize: 20,
@@ -36,7 +72,15 @@ class LoginPage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20),
-            const PasswordField(),
+            PasswordField(
+              controller: passController,
+              errorText: passErrorText,
+              onChanged: (_) {
+                setState(() {
+                  passErrorText = null;
+                });
+              },
+            ),
             Container(
               height: 40,
               alignment: Alignment.centerRight,
@@ -76,7 +120,9 @@ class LoginPage extends StatelessWidget {
               ),
               child: SizedBox.expand(
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    login();
+                  },
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [

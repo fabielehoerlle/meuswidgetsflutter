@@ -95,7 +95,10 @@ class SignupPage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20),
-            const PasswordField(),
+            PasswordField(
+              controller: TextEditingController(), // deleteme <------------
+              errorText: "",
+            ),
             const SizedBox(height: 30),
             Container(
               height: 60,
@@ -150,7 +153,14 @@ class SignupPage extends StatelessWidget {
 class PasswordField extends StatefulWidget {
   const PasswordField({
     Key? key,
+    required this.controller,
+    this.errorText,
+    this.onChanged,
   }) : super(key: key);
+
+  final TextEditingController controller;
+  final String? errorText;
+  final void Function(String)? onChanged;
 
   @override
   State<PasswordField> createState() => _PasswordFieldState();
@@ -161,9 +171,12 @@ class _PasswordFieldState extends State<PasswordField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: widget.controller,
       keyboardType: TextInputType.text,
       obscureText: obscureText,
+      onChanged: widget.onChanged,
       decoration: InputDecoration(
+        errorText: widget.errorText,
         border: const OutlineInputBorder(),
         labelText: "Senha",
         labelStyle: const TextStyle(
